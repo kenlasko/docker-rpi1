@@ -191,7 +191,7 @@ services:
       - "traefik.http.routers.ucdialplans.middlewares=ucdialplans"
       - "traefik.http.routers.ucdialplans.entrypoints=websecure"
       - "traefik.http.routers.ucdialplans.tls=true"
-      - "traefik.http.routers.adguard.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.ucdialplans.tls.certresolver=letsencrypt"
       - "traefik.http.middlewares.ucdialplans.redirectregex.regex=^https?://((www.)?ucdialplans.com)"
       - "traefik.http.middlewares.ucdialplans.redirectregex.replacement=https://www3.ucdialplans.com"
       - "traefik.http.middlewares.ucdialplans.redirectregex.permanent=true"
