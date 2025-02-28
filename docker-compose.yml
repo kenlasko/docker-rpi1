@@ -1,6 +1,6 @@
 services:
   adguard:
-    image: adguard/adguardhome
+    image: adguard/adguardhome:v0.107.57
     container_name: adguard
     hostname: rpi1
     restart: unless-stopped
@@ -27,7 +27,7 @@ services:
 
 
   netbootxyz:
-    image: ghcr.io/netbootxyz/netbootxyz
+    image: ghcr.io/netbootxyz/netbootxyz:0.7.5-nbxyz4
     container_name: netbootxyz
     restart: unless-stopped
     environment:
@@ -113,7 +113,7 @@ services:
 
   portainer-agent:
     container_name: portainer-agent
-    image: portainer/agent
+    image: portainer/agent:2.27.1
     restart: always
     ports:
       - 9001:9001    
@@ -124,7 +124,7 @@ services:
 
   traefik:
     container_name: traefik
-    image: traefik
+    image: traefik:v3.3.4
     restart: always
     command:
       - --entrypoints.web.address=:80
@@ -177,7 +177,7 @@ services:
 
   ucdialplans:
     container_name: ucdialplans
-    image: docker.io/kenlasko/ucdialplans:latest
+    image: docker.io/kenlasko/ucdialplans:14.5.11
     restart: unless-stopped
     environment:
       - DB_SERVER=mariadb-access.ucdialplans.com
@@ -200,22 +200,22 @@ services:
       - ipv6
 
 
-  watchtower:
-    container_name: watchtower
-    image: containrrr/watchtower:armhf-latest
-    restart: unless-stopped
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    command: --schedule "0 0 */12 * * *" --cleanup
-    deploy:
-      resources:
-        limits:
-          cpus: '1'
-          memory: '30M'
-    labels:
-      - "org.label-schema.group=rpi1-container"
-    networks:
-      - ipv6
+#  watchtower:
+#    container_name: watchtower
+#    image: containrrr/watchtower:armhf-latest
+#    restart: unless-stopped
+#    volumes:
+#      - /var/run/docker.sock:/var/run/docker.sock
+#    command: --schedule "0 0 */12 * * *" --cleanup
+#    deploy:
+#      resources:
+#        limits:
+#          cpus: '1'
+#          memory: '30M'
+#    labels:
+#      - "org.label-schema.group=rpi1-container"
+#    networks:
+#      - ipv6
 
 
 networks:
