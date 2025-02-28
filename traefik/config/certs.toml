@@ -1,0 +1,4 @@
+# Certs used for wildcard web cert
+[[tls.certificates]]
+  certFile = "/certs/star_ucdialplans_com.pem"
+  keyFile = "/certs/star_ucdialplans_com.key"

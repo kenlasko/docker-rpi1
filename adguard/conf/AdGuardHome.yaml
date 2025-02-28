@@ -1,0 +1,734 @@
+http:
+  pprof:
+    port: 6060
+    enabled: false
+  address: 0.0.0.0:3000
+  session_ttl: 720h
+users:
+  - name: kenadmin
+    password: $2a$10$osJFqxwqKVE3khvBAB7pIOy2/q4rbEbBahXCzmY0BaRdmZvfu2gU.
+auth_attempts: 5
+block_auth_min: 15
+http_proxy: ""
+language: en
+theme: auto
+dns:
+  bind_hosts:
+    - 0.0.0.0
+  port: 53
+  anonymize_client_ip: false
+  ratelimit: 10
+  ratelimit_subnet_len_ipv4: 24
+  ratelimit_subnet_len_ipv6: 56
+  ratelimit_whitelist: []
+  refuse_any: true
+  upstream_dns:
+    - '[//]192.168.1.1'
+    - tls://1dot1dot1dot1.cloudflare-dns.com
+  upstream_dns_file: ""
+  bootstrap_dns:
+    - 1.1.1.1
+    - 1.0.0.1
+  fallback_dns:
+    - 1.1.1.1
+    - 1.0.0.1
+  upstream_mode: load_balance
+  fastest_timeout: 1s
+  allowed_clients:
+    - 10.0.0.0/8
+    - 127.0.0.1
+    - 172.16.0.0/16
+    - 192.168.1.0/24
+    - 192.168.6.0/24
+    - ken-pixel-7-pro
+  disallowed_clients: []
+  blocked_hosts:
+    - version.bind
+    - id.server
+    - hostname.bind
+  trusted_proxies:
+    - 127.0.0.0/8
+    - ::1/128
+  cache_size: 41943040
+  cache_ttl_min: 0
+  cache_ttl_max: 0
+  cache_optimistic: true
+  bogus_nxdomain: []
+  aaaa_disabled: true
+  enable_dnssec: true
+  edns_client_subnet:
+    custom_ip: ""
+    enabled: false
+    use_custom: false
+  max_goroutines: 300
+  handle_ddr: true
+  ipset: []
+  ipset_file: ""
+  bootstrap_prefer_ipv6: false
+  upstream_timeout: 10s
+  private_networks: []
+  use_private_ptr_resolvers: true
+  local_ptr_upstreams:
+    - 192.168.1.1:53
+  use_dns64: false
+  dns64_prefixes: []
+  serve_http3: false
+  use_http3_upstreams: false
+  serve_plain_dns: true
+  hostsfile_enabled: true
+tls:
+  enabled: false
+  server_name: ""
+  force_https: false
+  port_https: 443
+  port_dns_over_tls: 853
+  port_dns_over_quic: 853
+  port_dnscrypt: 0
+  dnscrypt_config_file: ""
+  allow_unencrypted_doh: false
+  certificate_chain: ""
+  private_key: ""
+  certificate_path: ""
+  private_key_path: ""
+  strict_sni_check: false
+querylog:
+  dir_path: ""
+  ignored: []
+  interval: 168h
+  size_memory: 1000
+  enabled: true
+  file_enabled: true
+statistics:
+  dir_path: ""
+  ignored: []
+  interval: 240h
+  enabled: true
+filters:
+  - enabled: true
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_49.txt
+    name: HaGeZi's Ultimate Blocklist
+    id: 1703187571
+whitelist_filters: []
+user_rules:
+  - '||wpad.ucdialplans.com^$important'
+  - '@@||www.googleadservices.com^$important'
+  - '@@||*.hotjar.com^$important'
+  - '@@||*.console.api.aws^$important'
+  - '@@||labs.strava.com^$important'
+  - '@@||gtmetrix.com^$important'
+  - '@@||cloudfront.net^$important'
+  - '@@||wevideo-uploads.s3.amazonaws.com^$important'
+  - '@@||teams.events.data.microsoft.com^$important'
+  - '@@||home-assistant.io^$important'
+  - '@@||newrelic.com^$important'
+  - '@@||translations.hotjar.com^$important'
+  - '@@||browser-http-intake.logs.datadoghq.eu^$important'
+  - '@@||t.contentsquare.net^$important'
+  - '@@||logx.optimizely.com^$important'
+  - '@@||hotjar.chilipiper.com^$important'
+  - '@@||wealthsimple.chilipiper.com^$important'
+  - '@@||apps.chilipiper.com^$important'
+  - '@@||mobile.launchdarkly.com^$important'
+  - '@@||sdk.iad-05.braze.com^$important'
+  - '@@||rollout.ada.support^$important'
+  - '@@||ws-us3.pusher.com^$important'
+  - '@@||stats.pusher.com^$important'
+  - '@@||sockjs-us3.pusher.com^$important'
+  - '@@||logs.browser-intake-datadoghq.com^$important'
+  - '@@||sentry.io^$important'
+  - '@@||app.wealthsimple.com^$important'
+  - '@@||androidtvchannels-pa.googleapis.com^$important'
+  - '||*omni.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.1.17'
+  - '||*.omni.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.1.17'
+  - '@@||self.events.data.microsoft.com^$important'
+  - '@@||hooks.slack.com^$important'
+  - ""
+  - '|cloud-hubble.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=cloud,external-dns/resource=httproute/cilium/hubble",important'
+  - '|cloud-adguard.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=cloud,external-dns/resource=httproute/adguard/adguard",important'
+  - '|a-sonarr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-sonarr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-sonarr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,external-dns/resource=httproute/media-tools/sonarr",important'
+  - '|cloud-argocd.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|cloud-argocd.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|cloud-mariadb.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|cloud-mariadb.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|headlamp.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|a-owntracks.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-headlamp.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-headlamp.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-argocd.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-argocd.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-argocd.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|cloud-hubble.ucdialplans.com^$dnsrewrite=NOERROR;CNAME;onode1.ucdialplans.com,important'
+  - '|a-keel.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-keel.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|adguard.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|cloud-headlamp.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=cloud,external-dns/resource=httproute/headlamp/headlamp",important'
+  - '|ddns-updater.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|transmission.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|transmission.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|grafana.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|grafana.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|cname-cloud-prometheus.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=cloud,external-dns/resource=httproute/monitoring/prometheus",important'
+  - '|prometheus.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|prometheus.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|sealedsecrets.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|sealedsecrets.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|headlamp.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|headlamp.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|owntracks-recorder.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|esphome.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|cloud-kube.ucdialplans.com^$dnsrewrite=NOERROR;CNAME;onode1.ucdialplans.com,important'
+  - '|www.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|cloud-alertmanager.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=cloud,external-dns/resource=httproute/monitoring/alertmanager",important'
+  - '|longhorn.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|longhorn.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|plex.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|plex.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|plex.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,external-dns/resource=httproute/media-tools/plex",important'
+  - '|plex.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,external-dns/resource=httproute/media-tools/plex",important'
+  - '|esphome.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|esphome.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|cloud-headlamp.ucdialplans.com^$dnsrewrite=NOERROR;CNAME;onode1.ucdialplans.com,important'
+  - '|registry.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|longhorn.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|cloud-vaultwarden.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|cloud-vaultwarden.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|cname-cloud-uptime-kuma.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=cloud,external-dns/resource=httproute/uptime-kuma/uptime-kuma",important'
+  - '|a-cloud-keel.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-cloud-keel.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|keel.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|keel.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|cloud-keel.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|cloud-keel.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|transmission.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|overseerr.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|grafana.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|a-plex.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-plex.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-plex.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,external-dns/resource=httproute/media-tools/plex",important'
+  - '|a-plex.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,external-dns/resource=httproute/media-tools/plex",important'
+  - '|a-tautulli.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-tautulli.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-tautulli.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,external-dns/resource=httproute/media-tools/tautulli",important'
+  - '|a-tautulli.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,external-dns/resource=httproute/media-tools/tautulli",important'
+  - '|portainer.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|portainer.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-vaultwarden.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-vaultwarden.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|cname-cloud-hubble.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=cloud,external-dns/resource=httproute/cilium/hubble",important'
+  - '|cloud-mariadb.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|a-sealedsecrets.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-sealedsecrets.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|ddns-updater.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|ddns-updater.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|cloud-kube.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=cloud,external-dns/resource=httproute/default/kubeapi",important'
+  - '|cloud-prometheus.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=cloud,external-dns/resource=httproute/monitoring/prometheus",important'
+  - '|adguard.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|adguard.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|ha.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|ha.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|ha.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,external-dns/resource=httproute/homeassist/homeassist",important'
+  - '|mariadb.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|a-longhorn.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-longhorn.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-owntracks-recorder.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-uptime-kuma.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-uptime-kuma.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-uptime-kuma.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,external-dns/resource=httproute/uptime-kuma/uptime-kuma",important'
+  - '|cname-cloud-headlamp.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=cloud,external-dns/resource=httproute/headlamp/headlamp",important'
+  - '|a-readarr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-readarr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-readarr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,external-dns/resource=httproute/media-tools/readarr",important'
+  - '|hubble.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|hubble.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|sabnzbd.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|book-dl.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|a-grafana.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-grafana.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-zwaveadmin.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-zwaveadmin.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|book-dl.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,external-dns/resource=httproute/media-tools/calibre-downloader-aa",important'
+  - '|books.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|alertmanager.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|cloud-prometheus.ucdialplans.com^$dnsrewrite=NOERROR;CNAME;onode1.ucdialplans.com,important'
+  - '|mariadb.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|mariadb.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|readarr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|readarr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|readarr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,external-dns/resource=httproute/media-tools/readarr",important'
+  - '|tautulli.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|zwaveadmin.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|a-book-dl.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,external-dns/resource=httproute/media-tools/calibre-downloader-aa",important'
+  - '|a-www.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-www.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|kube.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.13,important'
+  - '|zwaveadmin.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|zwaveadmin.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|argocd.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|argocd.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|argocd.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|tautulli.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|tautulli.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|tautulli.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,external-dns/resource=httproute/media-tools/tautulli",important'
+  - '|tautulli.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,external-dns/resource=httproute/media-tools/tautulli",important'
+  - '|a-esphome.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-esphome.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|alertmanager.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|alertmanager.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|sealedsecrets.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|hubble.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|cname-cloud-grafana.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=cloud,external-dns/resource=httproute/monitoring/grafana",important'
+  - '|ha.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|uptime-kuma.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|uptime-kuma.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|uptime-kuma.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,external-dns/resource=httproute/uptime-kuma/uptime-kuma",important'
+  - '|a-mariadb-access.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-mariadb-access.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|sonarr.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|sabnzbd.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|sabnzbd.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|sabnzbd.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,external-dns/resource=httproute/media-tools/sabnzbd",important'
+  - '|sabnzbd.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,external-dns/resource=httproute/media-tools/sabnzbd",important'
+  - '|books.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,external-dns/resource=httproute/media-tools/calibre",important'
+  - '|a-prometheus.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-prometheus.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|mariadb-access.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|mariadb-access.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-cloud-vaultwarden.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-cloud-vaultwarden.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|radarr.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|a-radarr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-radarr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-ddns-updater.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-ddns-updater.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|gitea.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|owntracks.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-cloud-argocd.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-cloud-argocd.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|cloud-adguard.ucdialplans.com^$dnsrewrite=NOERROR;CNAME;onode1.ucdialplans.com,important'
+  - '|a-books.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,external-dns/resource=httproute/media-tools/calibre",important'
+  - '|plex.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|vaultwarden.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|vaultwarden.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-lidarr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-lidarr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-lidarr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,external-dns/resource=httproute/media-tools/lidarr",important'
+  - '|a-lidarr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,external-dns/resource=httproute/media-tools/lidarr",important'
+  - '|vaultwarden.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|a-alertmanager.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-alertmanager.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|cloud-argocd.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|prowlarr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|prowlarr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|prowlarr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,external-dns/resource=httproute/media-tools/prowlarr",important'
+  - '|cloud-grafana.ucdialplans.com^$dnsrewrite=NOERROR;CNAME;onode1.ucdialplans.com,important'
+  - '|cloud-alertmanager.ucdialplans.com^$dnsrewrite=NOERROR;CNAME;onode1.ucdialplans.com,important'
+  - '|cloud-vaultwarden.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|lidarr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|lidarr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|lidarr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,external-dns/resource=httproute/media-tools/lidarr",important'
+  - '|lidarr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,external-dns/resource=httproute/media-tools/lidarr",important'
+  - '|kube.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|kube.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-ha.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-ha.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-ha.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,external-dns/resource=httproute/homeassist/homeassist",important'
+  - '|argocd.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|cloud-uptime-kuma.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=cloud,external-dns/resource=httproute/uptime-kuma/uptime-kuma",important'
+  - '|sonarr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|sonarr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|sonarr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,external-dns/resource=httproute/media-tools/sonarr",important'
+  - '|a-adguard.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-adguard.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|www.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|www.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|overseerr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|overseerr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|overseerr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,external-dns/resource=httproute/media-tools/overseerr",important'
+  - '|cloud-grafana.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=cloud,external-dns/resource=httproute/monitoring/grafana",important'
+  - '|gitea.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|gitea.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|uptime-kuma.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|a-overseerr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-overseerr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-overseerr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,external-dns/resource=httproute/media-tools/overseerr",important'
+  - '|a-portainer.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-portainer.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|prometheus.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|cname-cloud-alertmanager.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=cloud,external-dns/resource=httproute/monitoring/alertmanager",important'
+  - '|cname-cloud-adguard.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=cloud,external-dns/resource=httproute/adguard/adguard",important'
+  - '|registry.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|registry.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-sabnzbd.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-sabnzbd.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-sabnzbd.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,external-dns/resource=httproute/media-tools/sabnzbd",important'
+  - '|a-sabnzbd.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,external-dns/resource=httproute/media-tools/sabnzbd",important'
+  - '|cloud-uptime-kuma.ucdialplans.com^$dnsrewrite=NOERROR;CNAME;onode1.ucdialplans.com,important'
+  - '|a-kube.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-kube.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|radarr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|radarr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|cname-cloud-kube.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=cloud,external-dns/resource=httproute/default/kubeapi",important'
+  - '|a-transmission.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-transmission.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-hubble.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-hubble.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|mariadb-access.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.10,important'
+  - '|prowlarr.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|traccar.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-registry.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-registry.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-gitea.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-gitea.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-mariadb.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-mariadb.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-traccar.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|portainer.ucdialplans.com^$dnsrewrite=NOERROR;A;192.168.10.2,important'
+  - '|a-prowlarr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-prowlarr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-prowlarr.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,external-dns/resource=httproute/media-tools/prowlarr",important'
+  - '|a-cloud-mariadb.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+  - '|a-cloud-mariadb.ucdialplans.com^$dnsrewrite=NOERROR;TXT;"heritage=external-dns,external-dns/owner=home,important'
+dhcp:
+  enabled: false
+  interface_name: ""
+  local_domain_name: lan
+  dhcpv4:
+    gateway_ip: ""
+    subnet_mask: ""
+    range_start: ""
+    range_end: ""
+    lease_duration: 86400
+    icmp_timeout_msec: 1000
+    options: []
+  dhcpv6:
+    range_start: ""
+    lease_duration: 86400
+    ra_slaac_only: false
+    ra_allow_slaac: false
+filtering:
+  blocking_ipv4: ""
+  blocking_ipv6: ""
+  blocked_services:
+    schedule:
+      time_zone: UTC
+    ids: []
+  protection_disabled_until: null
+  safe_search:
+    enabled: false
+    bing: true
+    duckduckgo: true
+    ecosia: true
+    google: true
+    pixabay: true
+    yandex: true
+    youtube: true
+  blocking_mode: default
+  parental_block_host: family-block.dns.adguard.com
+  safebrowsing_block_host: standard-block.dns.adguard.com
+  rewrites:
+    - domain: unifi.ucdialplans.com
+      answer: 192.168.1.1
+    - domain: nas01.ucdialplans.com
+      answer: 192.168.1.3
+    - domain: firepit-speakers.ucdialplans.com
+      answer: 192.168.1.23
+    - domain: myrouter.io
+      answer: 192.168.2.1
+    - domain: matchbox.ucdialplans.com
+      answer: nas01.ucdialplans.com
+    - domain: wled-fireplace-left.ucdialplans.com
+      answer: 192.168.1.55
+    - domain: wled-fireplace-right.ucdialplans.com
+      answer: 192.168.1.56
+    - domain: adguard-rpi1.ucdialplans.com
+      answer: rpi1
+    - domain: adguard-rpi2.ucdialplans.com
+      answer: rpi2
+    - domain: traefik-rpi1.ucdialplans.com
+      answer: rpi1
+    - domain: traefik-rpi2.ucdialplans.com
+      answer: rpi2
+    - domain: omni.ucdialplans.com
+      answer: 192.168.1.17
+    - domain: nas01web.ucdialplans.com
+      answer: 192.168.1.100
+    - domain: traefik-nas.ucdialplans.com
+      answer: nas01web.ucdialplans.com
+    - domain: sabnzbd-nas.ucdialplans.com
+      answer: nas01web.ucdialplans.com
+    - domain: ata.ucdialplans.com
+      answer: 192.168.1.24
+    - domain: onode1.ucdialplans.com
+      answer: 192.18.153.11
+    - domain: cloud-kube.ucdialplans.com
+      answer: onode1.ucdialplans.com
+    - domain: dns.ucdialplans.com
+      answer: 192.168.10.53
+    - domain: ken-pixel-7-pro.dns.ucdialplans.com
+      answer: 192.168.10.53
+    - domain: netbootxyz.ucdialplans.com
+      answer: rpi1
+    - domain: www3.ucdialplans.com
+      answer: rpi1
+    - domain: registry-ui.ucdialplans.com
+      answer: rpi1
+  safe_fs_patterns:
+    - /opt/adguardhome/work/data/userfilters/*
+  safebrowsing_cache_size: 1048576
+  safesearch_cache_size: 1048576
+  parental_cache_size: 1048576
+  cache_time: 30
+  filters_update_interval: 24
+  blocked_response_ttl: 15
+  filtering_enabled: true
+  parental_enabled: false
+  safebrowsing_enabled: true
+  protection_enabled: true
+clients:
+  runtime_sources:
+    whois: true
+    arp: true
+    rdns: true
+    dhcp: true
+    hosts: true
+  persistent:
+    - safe_search:
+        enabled: false
+        bing: false
+        duckduckgo: false
+        ecosia: false
+        google: false
+        pixabay: false
+        yandex: false
+        youtube: false
+      blocked_services:
+        schedule:
+          time_zone: America/Toronto
+        ids: []
+      name: Ken's Pixel 7 Pro
+      ids:
+        - ken-pixel-7-pro
+      tags: []
+      upstreams: []
+      uid: 018da031-df7e-72d7-a8ea-978051dae38f
+      upstreams_cache_size: 0
+      upstreams_cache_enabled: false
+      use_global_settings: true
+      filtering_enabled: false
+      parental_enabled: false
+      safebrowsing_enabled: false
+      use_global_blocked_services: true
+      ignore_querylog: false
+      ignore_statistics: false
+    - safe_search:
+        enabled: false
+        bing: true
+        duckduckgo: true
+        ecosia: false
+        google: true
+        pixabay: true
+        yandex: true
+        youtube: true
+      blocked_services:
+        schedule:
+          time_zone: UTC
+        ids: []
+      name: Lara
+      ids:
+        - 192.168.1.220
+        - 192.168.1.221
+        - 192.168.1.222
+      tags: []
+      upstreams: []
+      uid: 018da031-df7e-789a-b1dc-508f291a9717
+      upstreams_cache_size: 0
+      upstreams_cache_enabled: false
+      use_global_settings: false
+      filtering_enabled: false
+      parental_enabled: false
+      safebrowsing_enabled: false
+      use_global_blocked_services: false
+      ignore_querylog: false
+      ignore_statistics: false
+    - safe_search:
+        enabled: true
+        bing: true
+        duckduckgo: true
+        ecosia: false
+        google: true
+        pixabay: true
+        yandex: true
+        youtube: true
+      blocked_services:
+        schedule:
+          time_zone: America/Toronto
+        ids: []
+      name: Nvidia SHIELDs
+      ids:
+        - 192.168.1.31
+        - 192.168.1.32
+      tags: []
+      upstreams: []
+      uid: 0191917d-7344-73b8-ba82-aa244b623c09
+      upstreams_cache_size: 0
+      upstreams_cache_enabled: false
+      use_global_settings: false
+      filtering_enabled: true
+      parental_enabled: true
+      safebrowsing_enabled: true
+      use_global_blocked_services: true
+      ignore_querylog: false
+      ignore_statistics: false
+    - safe_search:
+        enabled: true
+        bing: true
+        duckduckgo: true
+        ecosia: false
+        google: true
+        pixabay: true
+        yandex: true
+        youtube: true
+      blocked_services:
+        schedule:
+          time_zone: UTC
+        ids:
+          - 4chan
+          - 500px
+          - 9gag
+          - activision_blizzard
+          - aliexpress
+          - amazon
+          - amazon_streaming
+          - amino
+          - apple_streaming
+          - battle_net
+          - betano
+          - betfair
+          - betway
+          - bigo_live
+          - bilibili
+          - blaze
+          - blizzard_entertainment
+          - bluesky
+          - canais_globo
+          - claro
+          - cloudflare
+          - clubhouse
+          - coolapk
+          - crunchyroll
+          - dailymotion
+          - deezer
+          - directvgo
+          - discoveryplus
+          - disneyplus
+          - douban
+          - ebay
+          - electronic_arts
+          - epic_games
+          - espn
+          - facebook
+          - fifa
+          - flickr
+          - globoplay
+          - gog
+          - hbomax
+          - hulu
+          - icloud_private_relay
+          - iheartradio
+          - imgur
+          - instagram
+          - iqiyi
+          - kakaotalk
+          - kik
+          - lazada
+          - leagueoflegends
+          - line
+          - linkedin
+          - lionsgateplus
+          - looke
+          - mail_ru
+          - mastodon
+          - mercado_libre
+          - minecraft
+          - nebula
+          - netflix
+          - nintendo
+          - nvidia
+          - ok
+          - olvid
+          - onlyfans
+          - origin
+          - paramountplus
+          - pinterest
+          - playstation
+          - plenty_of_fish
+          - plex
+          - pluto_tv
+          - privacy
+          - qq
+          - rakuten_viki
+          - reddit
+          - riot_games
+          - roblox
+          - rockstar_games
+          - samsung_tv_plus
+          - shein
+          - shopee
+          - signal
+          - skype
+          - soundcloud
+          - steam
+          - telegram
+          - temu
+          - tidal
+          - tiktok
+          - tinder
+          - tumblr
+          - twitch
+          - twitter
+          - ubisoft
+          - valorant
+          - viber
+          - vimeo
+          - vk
+          - voot
+          - wargaming
+          - wechat
+          - weibo
+          - wizz
+          - xboxlive
+          - xiaohongshu
+          - youtube
+          - zhihu
+      name: Quinn
+      ids:
+        - 192.168.1.225
+        - 192.168.1.226
+      tags: []
+      upstreams: []
+      uid: 018da031-df7e-702e-ab3a-aa76f6af4c3d
+      upstreams_cache_size: 0
+      upstreams_cache_enabled: false
+      use_global_settings: false
+      filtering_enabled: true
+      parental_enabled: true
+      safebrowsing_enabled: true
+      use_global_blocked_services: false
+      ignore_querylog: false
+      ignore_statistics: false
+log:
+  enabled: true
+  file: ""
+  max_backups: 0
+  max_size: 100
+  max_age: 3
+  compress: false
+  local_time: false
+  verbose: false
+os:
+  group: ""
+  user: ""
+  rlimit_nofile: 0
+schema_version: 29
