@@ -1,6 +1,6 @@
 services:
   adguard:
-    image: adguard/adguardhome:v0.107.57
+    image: adguard/adguardhome:latest
     container_name: adguard
     hostname: rpi1
     restart: unless-stopped
@@ -27,7 +27,7 @@ services:
 
 
   netbootxyz:
-    image: ghcr.io/netbootxyz/netbootxyz:0.7.5-nbxyz4
+    image: ghcr.io/netbootxyz/netbootxyz:latest
     container_name: netbootxyz
     restart: unless-stopped
     environment:
@@ -113,7 +113,7 @@ services:
 
   portainer-agent:
     container_name: portainer-agent
-    image: portainer/agent:2.27.1
+    image: portainer/agent:latest
     restart: always
     ports:
       - 9001:9001    
@@ -125,7 +125,7 @@ services:
 
   traefik:
     container_name: traefik
-    image: traefik:v3.3.3
+    image: traefik:latest
     restart: always
     command:
       - --entrypoints.web.address=:80
@@ -178,7 +178,7 @@ services:
 
   ucdialplans:
     container_name: ucdialplans
-    image: docker.io/kenlasko/ucdialplans:14.5.11
+    image: docker.io/kenlasko/ucdialplans:latest
     restart: unless-stopped
     environment:
       - DB_SERVER=mariadb-access.ucdialplans.com
@@ -201,17 +201,15 @@ services:
       - ipv6
 
 
-  webhook-listener:
-    image: alpine/socat:1.8.0.1
-    container_name: webhook-listener
-    command: >
-	TCP-LISTEN:9000,reuseaddr,fork
-	SYSTEM:"GIT_SSH_COMMAND='ssh -o StrictHostKeyChecking=no' cd /docker && git pull && docker compose up -d"
+  watchtower:
+    container_name: watchtower
+    image: containrrr/watchtower:armhf-latest
+    restart: unless-stopped
     volumes:
-      - .:/app
-      - /home/ken/.ssh:/root/.ssh  # Mount SSH keys    
-    restart: always
-
+    - /var/run/docker.sock:/var/run/docker.sock
+    command: --schedule "0 0 */2 * * *" --cleanup
+    networks:
+    - ipv6#  watchtower:
 
 
 networks:
