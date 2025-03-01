@@ -125,7 +125,7 @@ services:
 
   traefik:
     container_name: traefik
-    image: traefik:v3.3.4
+    image: traefik:v3.3.3
     restart: always
     command:
       - --entrypoints.web.address=:80
