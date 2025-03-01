@@ -204,10 +204,14 @@ services:
   webhook-listener:
     image: alpine/socat
     container_name: webhook-listener
-    command: TCP-LISTEN:9000,reuseaddr,fork SYSTEM:"cd /app && git pull && docker-compose up -d"
+    command: >
+	TCP-LISTEN:9000,reuseaddr,fork
+	SYSTEM:"GIT_SSH_COMMAND='ssh -o StrictHostKeyChecking=no' cd /docker && git pull && docker compose up -d"
     volumes:
       - .:/app
+      - /home/ken/.ssh:/root/.ssh  # Mount SSH keys    
     restart: always
+
 
 
 networks:
