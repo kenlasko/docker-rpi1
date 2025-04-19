@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/SkypeOptimizer/process.aspx" hash="9a546dd97" filehash="b7685ea25af056b7" flags="110000" assembly="ucdialplans" type="ASP.process_aspx">
+  <filedeps>
+    <filedep name="/SkypeOptimizer/process.aspx" />
+    <filedep name="/SkypeOptimizer/process.aspx.vb" />
+  </filedeps>
+</preserve>

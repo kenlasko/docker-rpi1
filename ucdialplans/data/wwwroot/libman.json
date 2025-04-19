@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "provider": "filesystem",
+      "library": "App_Code/",
+      "destination": "App_Code/App_Code/",
+      "files": [
+        "DBHelper.vb"
+      ]
+    }
+  ]
+}
