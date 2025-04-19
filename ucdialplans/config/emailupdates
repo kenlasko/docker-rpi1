@@ -1,4 +1,0 @@
-#!/bin/bash
-echo 'Running email update'
-curl --silent --output /dev/null --location --insecure --request POST 'https://www.ucdialplans.com/EmailUpdates.aspx' --form 'userID2="***REMOVED***"'
-echo 'Email update complete'

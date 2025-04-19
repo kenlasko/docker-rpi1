@@ -1,3 +1,0 @@
-#/bin/sh
-service nginx start
-fastcgi-mono-server4 /applications=/:/var/www/,/api/:/var/www,/queryapi/:/var/www,/regexrangeapi/:/var/www,/rnlapi/:/var/www /socket=tcp:9000

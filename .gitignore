@@ -6,3 +6,4 @@ omni/etcd/
 omni/snapshot.db
 omni/secondary-storage/
 traefik/logs/
+ucdialplans/
