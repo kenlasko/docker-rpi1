@@ -62,7 +62,7 @@ services:
     ports:          # disable for old method
       - 50180:50180/udp
     command:
-      - --account-id=***REMOVED***
+      - --account-id=${OMNI_ACCOUNT_ID} 
       - --name=onprem-omni
       - --private-key-source=file:///omni.asc
       - --event-sink-port=8091
@@ -75,7 +75,7 @@ services:
       - --advertised-kubernetes-proxy-url=https://omni.ucdialplans.com:8100/
       - --auth-auth0-enabled=true
       - --auth-auth0-domain=ucdialplans.us.auth0.com
-      - --auth-auth0-client-id=***REMOVED***
+      - --auth-auth0-client-id=${AUTH0_CLIENT_ID}
       - --workload-proxying-subdomain=omni
       - --initial-users=ken.lasko@gmail.com
     labels:
@@ -115,20 +115,6 @@ services:
       - ./omni/omni.asc:/omni.asc
     networks:
       - ipv6
-
-
-
-
-#  omni-infra-provider:
-#    image: ghcr.io/siderolabs/omni-infra-provider-bare-metal:v0.1.0-beta.0
-#    container_name: omni-infra-provider
-#    restart: always
-#    network_mode: host
-#    command:
-#      - --api-advertise-address=192.168.1.17
-#    environment:
-#      - OMNI_ENDPOINT=https://omni.ucdialplans.com
-#      - OMNI_SERVICE_ACCOUNT_KEY=***REMOVED***SWDBtdFlqM01JQTR0aEcxXG56VG84WW1GeVpTMXRaWFJoYkVCcGJtWnlZUzF3Y205MmFXUmxjaTV6WlhKMmFXTmxZV05qYjNWdWRDNXZcbmJXNXBMbk5wWkdWeWJ5NWtaWFkrd3BJRUVCWUtBRVFGZ21lS3Zad0ZpUUhoTTRBRUN3a0hDQW1RbUdQU1xuTERINlptVURGUWdLQkJZQ0FRQUNHUUVDbXdNQ0hnRVdJUVRtWUF0UDR0QWhmQVRvVWphWVk5SXNNZnBtXG5aUUFBSDhnQS9SUlVCKzVvcnF4MHFhRzQ5VUYyVVVUa0ptM1A2OXFiYSt1bVFTdjlscDhrQVFDQ09jL3Zcbi9MdVl2aUw5Mm9FK044WVlyc1BLMlFjYkZINFdLem8xQkkzckM4ZGRCR2VLdlp3U0Npc0dBUVFCbDFVQlxuQlFFQkIwRGpDcEhvdkFaWkhsQ3pSOGw0anRLaWRVTVNuVWFOcWhLRk1VbUtxYmxiSUFNQkNBY0FBUDkwXG5ML2hZVXZTVjZCK3ZLRW1OK1BoSnlvUmlMVGFHMUZsdEh4V1NsR3lDbUJETnduNEVHQllLQURBRmdtZUtcbnZad0ZpUUhoTTRBSmtKaGowaXd4K21abEFwc01GaUVFNW1BTFQrTFFJWHdFNkZJMm1HUFNMREg2Wm1VQVxuQU14cEFRQ1VhK2pQbURCL0JaYVV0OVRVN0NyM3BnOGNoR2xhUHlKYkVUbFQ4ZjBuT2dFQWdjUFBOdS8yXG5qdTltS1Jobnh4c0xHeWdTV25NOFY1czlpQ2U5TUlRUXdBcz1cbj0wRDVIXG4tLS0tLUVORCBQR1AgUFJJVkFURSBLRVkgQkxPQ0stLS0tLSJ9
 
 
   portainer-agent:
@@ -171,8 +157,8 @@ services:
       - --entryPoints.mapi.address=:8090
       - --entryPoints.kproxy.address=:8100
     environment:
-      - CLOUDFLARE_EMAIL=ken.lasko@gmail.com
-      - CLOUDFLARE_DNS_API_TOKEN=***REMOVED***
+      - CLOUDFLARE_EMAIL=${CLOUDFLARE_EMAIL}
+      - CLOUDFLARE_DNS_API_TOKEN=${CLOUDFLARE_DNS_API_TOKEN}
     ports:
       - 80:80
       - 443:443
@@ -204,10 +190,10 @@ services:
     image: docker.io/kenlasko/ucdialplans:latest
     restart: unless-stopped
     environment:
-      - DB_SERVER=mariadb-access.ucdialplans.com
-      - DB_DATABASE=ucdialplans
-      - DB_USERNAME=UCDialplans_Website
-      - DB_PASSWORD=***REMOVED***
+      - DB_SERVER=${UCDIALPLANS_DB_SERVER}
+      - DB_DATABASE=${UCDIALPLANS_DB_DATABASE}
+      - DB_USERNAME=${UCDIALPLANS_DB_USERNAME}
+      - DB_PASSWORD=${UCDIALPLANS_DB_PASSWORD}
     volumes:
       - ./ucdialplans/data/wwwroot/:/var/www/
     labels:
