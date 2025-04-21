@@ -1,0 +1,579 @@
+2025-03-17T02:00:46Z INF Traefik version 3.3.4 built on 2025-02-25T10:11:00Z version=3.3.4
+2025-03-17T02:00:46Z INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2025-03-17T02:00:46Z INF Starting provider aggregator *aggregator.ProviderAggregator
+2025-03-17T02:00:46Z INF Starting provider *traefik.Provider
+2025-03-17T02:00:46Z INF Starting provider *acme.ChallengeTLSALPN
+2025-03-17T02:00:46Z INF Starting provider *docker.Provider
+2025-03-17T02:00:46Z INF Starting provider *acme.Provider
+2025-03-17T02:00:46Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-03-17T02:00:46Z ERR error="service \"dumpcerts-docker\" error: port is missing" container=dumpcerts-docker-52315c2bba3c71c9e39dbdeb42926af04e9b2b204a9aee65f536906819e4dc77 providerName=docker
+2025-03-17T02:00:50Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-17T02:05:45Z INF I have to go...
+2025-03-17T02:05:45Z INF Stopping server gracefully
+2025-03-17T02:05:45Z ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=web
+2025-03-17T02:05:45Z ERR error="accept tcp [::]:8100: use of closed network connection" entryPointName=kproxy
+2025-03-17T02:05:45Z ERR Error while starting server error="accept tcp [::]:80: use of closed network connection" entryPointName=web
+2025-03-17T02:05:45Z ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-03-17T02:05:45Z ERR Error while starting server error="accept tcp [::]:8100: use of closed network connection" entryPointName=kproxy
+2025-03-17T02:05:45Z ERR error="accept tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-03-17T02:05:45Z ERR error="close tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-03-17T02:05:46Z ERR error="close tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-03-17T02:05:46Z INF Server stopped
+2025-03-17T02:05:46Z INF Shutting down
+2025-03-17T02:05:52Z INF Traefik version 3.3.4 built on 2025-02-25T10:11:00Z version=3.3.4
+2025-03-17T02:05:52Z INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2025-03-17T02:05:52Z INF Starting provider aggregator *aggregator.ProviderAggregator
+2025-03-17T02:05:52Z INF Starting provider *traefik.Provider
+2025-03-17T02:05:52Z INF Starting provider *docker.Provider
+2025-03-17T02:05:52Z INF Starting provider *acme.Provider
+2025-03-17T02:05:52Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-03-17T02:05:52Z INF Starting provider *acme.ChallengeTLSALPN
+2025-03-17T02:05:52Z ERR error="service \"dumpcerts-docker\" error: port is missing" container=dumpcerts-docker-52315c2bba3c71c9e39dbdeb42926af04e9b2b204a9aee65f536906819e4dc77 providerName=docker
+2025-03-17T02:05:56Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-17T02:14:53Z INF I have to go...
+2025-03-17T02:14:53Z INF Stopping server gracefully
+2025-03-17T02:14:53Z ERR error="accept tcp [::]:8100: use of closed network connection" entryPointName=kproxy
+2025-03-17T02:14:53Z ERR Error while starting server error="accept tcp [::]:8100: use of closed network connection" entryPointName=kproxy
+2025-03-17T02:14:53Z ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=web
+2025-03-17T02:14:53Z ERR error="close tcp [::]:80: use of closed network connection" entryPointName=web
+2025-03-17T02:14:53Z ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-03-17T02:14:53Z ERR error="accept tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-03-17T02:14:53Z ERR error="close tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-03-17T02:14:53Z ERR error="close tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-03-17T02:14:53Z INF Server stopped
+2025-03-17T02:14:53Z INF Shutting down
+2025-03-17T02:15:11Z INF Traefik version 3.3.4 built on 2025-02-25T10:11:00Z version=3.3.4
+2025-03-17T02:15:11Z INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2025-03-17T02:15:11Z INF Starting provider aggregator *aggregator.ProviderAggregator
+2025-03-17T02:15:11Z INF Starting provider *docker.Provider
+2025-03-17T02:15:11Z INF Starting provider *traefik.Provider
+2025-03-17T02:15:11Z INF Starting provider *acme.Provider
+2025-03-17T02:15:11Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-03-17T02:15:11Z INF Starting provider *acme.ChallengeTLSALPN
+2025-03-17T02:15:14Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-17T02:30:13Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-17T02:31:42Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-17T02:31:52Z INF I have to go...
+2025-03-17T02:31:52Z INF Stopping server gracefully
+2025-03-17T02:31:52Z ERR error="accept tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-03-17T02:31:52Z ERR error="accept tcp [::]:8100: use of closed network connection" entryPointName=kproxy
+2025-03-17T02:31:52Z ERR Error while starting server error="accept tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-03-17T02:31:52Z ERR Error while starting server error="accept tcp [::]:8100: use of closed network connection" entryPointName=kproxy
+2025-03-17T02:31:52Z ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=web
+2025-03-17T02:31:52Z ERR Error while starting server error="accept tcp [::]:80: use of closed network connection" entryPointName=web
+2025-03-17T02:31:52Z ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-03-17T02:31:52Z ERR Error while starting server error="accept tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-03-17T02:31:52Z ERR error="close tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-03-17T02:32:02Z INF Server stopped
+2025-03-17T02:32:02Z INF Shutting down
+2025-03-17T02:32:04Z INF Traefik version 3.3.4 built on 2025-02-25T10:11:00Z version=3.3.4
+2025-03-17T02:32:04Z INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2025-03-17T02:32:04Z INF Starting provider aggregator *aggregator.ProviderAggregator
+2025-03-17T02:32:04Z INF Starting provider *traefik.Provider
+2025-03-17T02:32:04Z INF Starting provider *docker.Provider
+2025-03-17T02:32:04Z INF Starting provider *acme.Provider
+2025-03-17T02:32:04Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-03-17T02:32:04Z INF Starting provider *acme.ChallengeTLSALPN
+2025-03-17T02:32:06Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-17T02:46:38Z INF I have to go...
+2025-03-17T02:46:38Z INF Stopping server gracefully
+2025-03-17T02:46:38Z ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-03-17T02:46:38Z ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=web
+2025-03-17T02:46:38Z ERR Error while starting server error="accept tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-03-17T02:46:38Z ERR Error while starting server error="accept tcp [::]:80: use of closed network connection" entryPointName=web
+2025-03-17T02:46:38Z ERR error="accept tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-03-17T02:46:38Z ERR Error while starting server error="accept tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-03-17T02:46:38Z ERR error="accept tcp [::]:8100: use of closed network connection" entryPointName=kproxy
+2025-03-17T02:46:38Z ERR error="close tcp [::]:8100: use of closed network connection" entryPointName=kproxy
+2025-03-17T02:46:48Z INF Server stopped
+2025-03-17T02:46:48Z INF Shutting down
+2025-03-17T02:46:50Z INF Traefik version 3.3.4 built on 2025-02-25T10:11:00Z version=3.3.4
+2025-03-17T02:46:50Z INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2025-03-17T02:46:50Z INF Starting provider aggregator *aggregator.ProviderAggregator
+2025-03-17T02:46:50Z INF Starting provider *acme.ChallengeTLSALPN
+2025-03-17T02:46:50Z INF Starting provider *docker.Provider
+2025-03-17T02:46:50Z INF Starting provider *traefik.Provider
+2025-03-17T02:46:50Z INF Starting provider *acme.Provider
+2025-03-17T02:46:50Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-03-17T02:46:51Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-17T02:47:21Z INF I have to go...
+2025-03-17T02:47:21Z INF Stopping server gracefully
+2025-03-17T02:47:21Z ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-03-17T02:47:21Z ERR error="accept tcp [::]:51820: use of closed network connection" entryPointName=kproxy
+2025-03-17T02:47:21Z ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=web
+2025-03-17T02:47:21Z ERR error="accept tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-03-17T02:47:21Z ERR error="close tcp [::]:80: use of closed network connection" entryPointName=web
+2025-03-17T02:47:21Z ERR error="close tcp [::]:51820: use of closed network connection" entryPointName=kproxy
+2025-03-17T02:47:21Z ERR error="close tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-03-17T02:47:31Z INF Server stopped
+2025-03-17T02:47:31Z INF Shutting down
+2025-03-17T02:47:33Z INF Traefik version 3.3.4 built on 2025-02-25T10:11:00Z version=3.3.4
+2025-03-17T02:47:33Z INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2025-03-17T02:47:33Z INF Starting provider aggregator *aggregator.ProviderAggregator
+2025-03-17T02:47:33Z INF Starting provider *traefik.Provider
+2025-03-17T02:47:33Z INF Starting provider *docker.Provider
+2025-03-17T02:47:33Z INF Starting provider *acme.ChallengeTLSALPN
+2025-03-17T02:47:33Z INF Starting provider *acme.Provider
+2025-03-17T02:47:33Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-03-17T02:47:35Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-17T12:19:25Z INF I have to go...
+2025-03-17T12:19:25Z INF Stopping server gracefully
+2025-03-17T12:19:25Z ERR error="accept tcp [::]:51820: use of closed network connection" entryPointName=wireguard
+2025-03-17T12:19:25Z ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-03-17T12:19:25Z ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=web
+2025-03-17T12:19:25Z ERR Error while starting server error="accept tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-03-17T12:19:25Z ERR error="close tcp [::]:80: use of closed network connection" entryPointName=web
+2025-03-17T12:19:25Z ERR error="close tcp [::]:51820: use of closed network connection" entryPointName=wireguard
+2025-03-17T12:19:25Z ERR error="accept tcp [::]:8100: use of closed network connection" entryPointName=kproxy
+2025-03-17T12:19:25Z ERR Error while starting server error="accept tcp [::]:8100: use of closed network connection" entryPointName=kproxy
+2025-03-17T12:19:25Z ERR error="accept tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-03-17T12:19:25Z ERR error="close tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-03-17T12:19:26Z INF Server stopped
+2025-03-17T12:19:26Z INF Shutting down
+2025-03-17T12:20:19Z INF Traefik version 3.3.4 built on 2025-02-25T10:11:00Z version=3.3.4
+2025-03-17T12:20:19Z INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2025-03-17T12:20:19Z INF Starting provider aggregator *aggregator.ProviderAggregator
+2025-03-17T12:20:19Z INF Starting provider *acme.ChallengeTLSALPN
+2025-03-17T12:20:19Z INF Starting provider *traefik.Provider
+2025-03-17T12:20:19Z INF Starting provider *docker.Provider
+2025-03-17T12:20:19Z INF Starting provider *acme.Provider
+2025-03-17T12:20:19Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-03-17T12:20:21Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-17T12:22:30Z INF I have to go...
+2025-03-17T12:22:30Z INF Stopping server gracefully
+2025-03-17T12:22:30Z ERR error="accept tcp [::]:8100: use of closed network connection" entryPointName=kproxy
+2025-03-17T12:22:30Z ERR error="close tcp [::]:8100: use of closed network connection" entryPointName=kproxy
+2025-03-17T12:22:30Z ERR error="accept tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-03-17T12:22:30Z ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-03-17T12:22:30Z ERR Error while starting server error="accept tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-03-17T12:22:30Z ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=web
+2025-03-17T12:22:30Z ERR error="close tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-03-17T12:22:30Z ERR error="close tcp [::]:80: use of closed network connection" entryPointName=web
+2025-03-17T12:22:31Z INF Server stopped
+2025-03-17T12:22:31Z INF Shutting down
+2025-03-17T12:22:38Z INF Traefik version 3.3.4 built on 2025-02-25T10:11:00Z version=3.3.4
+2025-03-17T12:22:38Z INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2025-03-17T12:22:38Z INF Starting provider aggregator *aggregator.ProviderAggregator
+2025-03-17T12:22:38Z INF Starting provider *acme.ChallengeTLSALPN
+2025-03-17T12:22:38Z INF Starting provider *docker.Provider
+2025-03-17T12:22:38Z INF Starting provider *traefik.Provider
+2025-03-17T12:22:38Z INF Starting provider *acme.Provider
+2025-03-17T12:22:38Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-03-17T12:22:39Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-17T12:25:25Z INF I have to go...
+2025-03-17T12:25:25Z INF Stopping server gracefully
+2025-03-17T12:25:25Z ERR error="accept tcp [::]:51820: use of closed network connection" entryPointName=wireguard
+2025-03-17T12:25:25Z ERR Error while starting server error="accept tcp [::]:51820: use of closed network connection" entryPointName=wireguard
+2025-03-17T12:25:25Z ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-03-17T12:25:25Z ERR error="accept tcp [::]:8100: use of closed network connection" entryPointName=kproxy
+2025-03-17T12:25:25Z ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=web
+2025-03-17T12:25:25Z ERR error="close tcp [::]:8100: use of closed network connection" entryPointName=kproxy
+2025-03-17T12:25:25Z ERR error="close tcp [::]:80: use of closed network connection" entryPointName=web
+2025-03-17T12:25:25Z ERR error="accept tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-03-17T12:25:25Z ERR error="close tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-03-17T12:25:26Z ERR error="close tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-03-17T12:25:27Z INF Server stopped
+2025-03-17T12:25:27Z INF Shutting down
+2025-03-17T12:25:32Z INF Traefik version 3.3.4 built on 2025-02-25T10:11:00Z version=3.3.4
+2025-03-17T12:25:32Z INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2025-03-17T12:25:32Z INF Starting provider aggregator *aggregator.ProviderAggregator
+2025-03-17T12:25:32Z INF Starting provider *traefik.Provider
+2025-03-17T12:25:32Z INF Starting provider *docker.Provider
+2025-03-17T12:25:32Z INF Starting provider *acme.ChallengeTLSALPN
+2025-03-17T12:25:32Z INF Starting provider *acme.Provider
+2025-03-17T12:25:32Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-03-17T12:25:36Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-17T12:27:06Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-17T12:27:23Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-17T12:27:39Z ERR error="service \"dumpcerts-docker\" error: port is missing" container=dumpcerts-docker-ba5823d7f7526241c3d83936a782ec2f0266f145dd08ce9981ed8d63f7475e60 providerName=docker
+2025-03-17T12:27:49Z ERR error="service \"dumpcerts-docker\" error: port is missing" container=dumpcerts-docker-ba5823d7f7526241c3d83936a782ec2f0266f145dd08ce9981ed8d63f7475e60 providerName=docker
+2025-03-17T12:27:50Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-17T12:28:01Z ERR error="service \"dumpcerts-docker\" error: port is missing" container=dumpcerts-docker-ba5823d7f7526241c3d83936a782ec2f0266f145dd08ce9981ed8d63f7475e60 providerName=docker
+2025-03-17T12:28:02Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-17T13:43:50Z ERR error="service \"dumpcerts-docker\" error: port is missing" container=dumpcerts-docker-ba5823d7f7526241c3d83936a782ec2f0266f145dd08ce9981ed8d63f7475e60 providerName=docker
+2025-03-17T13:46:30Z INF I have to go...
+2025-03-17T13:46:30Z INF Stopping server gracefully
+2025-03-17T13:46:30Z ERR error="accept tcp [::]:51820: use of closed network connection" entryPointName=wireguard
+2025-03-17T13:46:30Z ERR error="accept tcp [::]:8100: use of closed network connection" entryPointName=kproxy
+2025-03-17T13:46:30Z ERR error="close tcp [::]:8100: use of closed network connection" entryPointName=kproxy
+2025-03-17T13:46:30Z ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=web
+2025-03-17T13:46:30Z ERR error="accept tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-03-17T13:46:30Z ERR error="close tcp [::]:80: use of closed network connection" entryPointName=web
+2025-03-17T13:46:30Z ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-03-17T13:46:30Z ERR error="close tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-03-17T13:46:30Z ERR error="close tcp [::]:51820: use of closed network connection" entryPointName=wireguard
+2025-03-17T13:46:31Z ERR error="close tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-03-17T13:46:32Z INF Server stopped
+2025-03-17T13:46:32Z INF Shutting down
+2025-03-17T13:46:34Z INF Traefik version 3.3.4 built on 2025-02-25T10:11:00Z version=3.3.4
+2025-03-17T13:46:34Z INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2025-03-17T13:46:34Z INF Starting provider aggregator *aggregator.ProviderAggregator
+2025-03-17T13:46:34Z INF Starting provider *traefik.Provider
+2025-03-17T13:46:34Z INF Starting provider *docker.Provider
+2025-03-17T13:46:34Z INF Starting provider *acme.ChallengeTLSALPN
+2025-03-17T13:46:34Z INF Starting provider *acme.Provider
+2025-03-17T13:46:34Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-03-17T13:46:34Z ERR error="service \"dumpcerts-docker\" error: port is missing" container=dumpcerts-docker-ba5823d7f7526241c3d83936a782ec2f0266f145dd08ce9981ed8d63f7475e60 providerName=docker
+2025-03-17T13:46:35Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-17T14:15:58Z INF I have to go...
+2025-03-17T14:15:58Z INF Stopping server gracefully
+2025-03-17T14:15:58Z ERR error="accept tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-03-17T14:15:58Z ERR error="close tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-03-17T14:15:58Z ERR error="accept tcp [::]:8100: use of closed network connection" entryPointName=kproxy
+2025-03-17T14:15:58Z ERR error="close tcp [::]:8100: use of closed network connection" entryPointName=kproxy
+2025-03-17T14:15:58Z ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-03-17T14:15:58Z ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=web
+2025-03-17T14:15:58Z ERR error="close tcp [::]:80: use of closed network connection" entryPointName=web
+2025-03-17T14:15:59Z ERR error="close tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-03-17T14:15:59Z INF Server stopped
+2025-03-17T14:15:59Z INF Shutting down
+2025-03-17T14:16:05Z INF Traefik version 3.3.4 built on 2025-02-25T10:11:00Z version=3.3.4
+2025-03-17T14:16:05Z INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2025-03-17T14:16:05Z INF Starting provider aggregator *aggregator.ProviderAggregator
+2025-03-17T14:16:05Z INF Starting provider *traefik.Provider
+2025-03-17T14:16:05Z INF Starting provider *docker.Provider
+2025-03-17T14:16:05Z INF Starting provider *acme.Provider
+2025-03-17T14:16:05Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-03-17T14:16:05Z INF Starting provider *acme.ChallengeTLSALPN
+2025-03-17T14:16:05Z ERR error="service \"dumpcerts-docker\" error: port is missing" container=dumpcerts-docker-ba5823d7f7526241c3d83936a782ec2f0266f145dd08ce9981ed8d63f7475e60 providerName=docker
+2025-03-17T14:16:08Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-17T16:18:03Z INF I have to go...
+2025-03-17T16:18:03Z INF Stopping server gracefully
+2025-03-17T16:18:03Z ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=web
+2025-03-17T16:18:03Z ERR error="accept tcp [::]:8100: use of closed network connection" entryPointName=kproxy
+2025-03-17T16:18:03Z ERR Error while starting server error="accept tcp [::]:80: use of closed network connection" entryPointName=web
+2025-03-17T16:18:03Z ERR error="close tcp [::]:8100: use of closed network connection" entryPointName=kproxy
+2025-03-17T16:18:03Z ERR error="accept tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-03-17T16:18:03Z ERR error="close tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-03-17T16:18:03Z ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-03-17T16:18:03Z ERR error="close tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-03-17T16:18:03Z INF Server stopped
+2025-03-17T16:18:03Z INF Shutting down
+2025-03-17T16:18:10Z INF Traefik version 3.3.4 built on 2025-02-25T10:11:00Z version=3.3.4
+2025-03-17T16:18:10Z INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2025-03-17T16:18:10Z INF Starting provider aggregator *aggregator.ProviderAggregator
+2025-03-17T16:18:10Z INF Starting provider *docker.Provider
+2025-03-17T16:18:10Z INF Starting provider *acme.ChallengeTLSALPN
+2025-03-17T16:18:10Z INF Starting provider *acme.Provider
+2025-03-17T16:18:10Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-03-17T16:18:10Z INF Starting provider *traefik.Provider
+2025-03-17T16:18:10Z ERR error="service \"dumpcerts-docker\" error: port is missing" container=dumpcerts-docker-ba5823d7f7526241c3d83936a782ec2f0266f145dd08ce9981ed8d63f7475e60 providerName=docker
+2025-03-17T16:18:12Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-17T16:19:55Z ERR error="service \"dumpcerts-docker\" error: port is missing" container=dumpcerts-docker-ba5823d7f7526241c3d83936a782ec2f0266f145dd08ce9981ed8d63f7475e60 providerName=docker
+2025-03-17T16:19:56Z ERR error="service \"dumpcerts-docker\" error: port is missing" container=dumpcerts-docker-ba5823d7f7526241c3d83936a782ec2f0266f145dd08ce9981ed8d63f7475e60 providerName=docker
+2025-03-17T16:19:58Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-17T16:29:10Z ERR error="service \"dumpcerts-docker\" error: port is missing" container=dumpcerts-docker-ba5823d7f7526241c3d83936a782ec2f0266f145dd08ce9981ed8d63f7475e60 providerName=docker
+2025-03-17T16:29:11Z ERR error="service \"dumpcerts-docker\" error: port is missing" container=dumpcerts-docker-ba5823d7f7526241c3d83936a782ec2f0266f145dd08ce9981ed8d63f7475e60 providerName=docker
+2025-03-17T16:29:13Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-17T16:48:59Z INF I have to go...
+2025-03-17T16:48:59Z INF Stopping server gracefully
+2025-03-17T16:48:59Z ERR error="accept tcp [::]:8100: use of closed network connection" entryPointName=kproxy
+2025-03-17T16:48:59Z ERR error="accept tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-03-17T16:48:59Z ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-03-17T16:48:59Z ERR error="close tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-03-17T16:48:59Z ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=web
+2025-03-17T16:48:59Z ERR error="close tcp [::]:80: use of closed network connection" entryPointName=web
+2025-03-17T16:48:59Z ERR error="close tcp [::]:8100: use of closed network connection" entryPointName=kproxy
+2025-03-17T16:49:09Z INF Server stopped
+2025-03-17T16:49:09Z INF Shutting down
+2025-03-17T16:49:11Z INF Traefik version 3.3.4 built on 2025-02-25T10:11:00Z version=3.3.4
+2025-03-17T16:49:11Z INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2025-03-17T16:49:11Z ERR The ACME resolve is skipped from the resolvers list error="unable to get ACME account: open /letsencrypt/acme.json: no such file or directory" resolver=letsencrypt
+2025-03-17T16:49:11Z INF Starting provider aggregator *aggregator.ProviderAggregator
+2025-03-17T16:49:11Z INF Starting provider *acme.ChallengeTLSALPN
+2025-03-17T16:49:11Z INF Starting provider *traefik.Provider
+2025-03-17T16:49:11Z INF Starting provider *docker.Provider
+2025-03-17T16:49:11Z ERR error="service \"dumpcerts-docker\" error: port is missing" container=dumpcerts-docker-ba5823d7f7526241c3d83936a782ec2f0266f145dd08ce9981ed8d63f7475e60 providerName=docker
+2025-03-17T16:49:12Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-17T16:49:12Z ERR Router uses a nonexistent certificate resolver certificateResolver=letsencrypt routerName=netbootxyz@docker
+2025-03-17T16:49:12Z ERR Router uses a nonexistent certificate resolver certificateResolver=letsencrypt routerName=omni@docker
+2025-03-17T16:49:12Z ERR Router uses a nonexistent certificate resolver certificateResolver=letsencrypt routerName=kproxy@docker
+2025-03-17T16:49:12Z ERR Router uses a nonexistent certificate resolver certificateResolver=letsencrypt routerName=websecure-portainer-agent-docker@docker
+2025-03-17T16:49:12Z ERR Router uses a nonexistent certificate resolver certificateResolver=letsencrypt routerName=traefik@docker
+2025-03-17T16:49:12Z ERR Router uses a nonexistent certificate resolver certificateResolver=letsencrypt routerName=websecure-watchtower-docker@docker
+2025-03-17T16:49:12Z ERR Router uses a nonexistent certificate resolver certificateResolver=letsencrypt routerName=mapi@docker
+2025-03-17T16:49:12Z ERR Router uses a nonexistent certificate resolver certificateResolver=letsencrypt routerName=adguard@docker
+2025-03-17T16:49:32Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-17T16:49:32Z ERR Router uses a nonexistent certificate resolver certificateResolver=letsencrypt routerName=omni@docker
+2025-03-17T16:49:32Z ERR Router uses a nonexistent certificate resolver certificateResolver=letsencrypt routerName=kproxy@docker
+2025-03-17T16:49:32Z ERR Router uses a nonexistent certificate resolver certificateResolver=letsencrypt routerName=traefik@docker
+2025-03-17T16:49:32Z ERR Router uses a nonexistent certificate resolver certificateResolver=letsencrypt routerName=mapi@docker
+2025-03-17T16:49:32Z ERR Router uses a nonexistent certificate resolver certificateResolver=letsencrypt routerName=ucdialplans@docker
+2025-03-17T16:49:32Z ERR Router uses a nonexistent certificate resolver certificateResolver=letsencrypt routerName=websecure-watchtower-docker@docker
+2025-03-17T16:49:32Z ERR Router uses a nonexistent certificate resolver certificateResolver=letsencrypt routerName=adguard@docker
+2025-03-17T16:49:32Z ERR Router uses a nonexistent certificate resolver certificateResolver=letsencrypt routerName=netbootxyz@docker
+2025-03-17T16:49:32Z ERR Router uses a nonexistent certificate resolver certificateResolver=letsencrypt routerName=websecure-portainer-agent-docker@docker
+2025-03-17T17:30:06Z INF I have to go...
+2025-03-17T17:30:06Z INF Stopping server gracefully
+2025-03-17T17:30:06Z ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=web
+2025-03-17T17:30:06Z ERR error="accept tcp [::]:8100: use of closed network connection" entryPointName=kproxy
+2025-03-17T17:30:06Z ERR error="accept tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-03-17T17:30:06Z ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-03-17T17:30:06Z ERR error="close tcp [::]:8100: use of closed network connection" entryPointName=kproxy
+2025-03-17T17:30:06Z ERR error="close tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-03-17T17:30:06Z ERR error="close tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-03-17T17:30:06Z ERR error="close tcp [::]:80: use of closed network connection" entryPointName=web
+2025-03-17T17:30:06Z INF Server stopped
+2025-03-17T17:30:06Z INF Shutting down
+2025-03-17T17:30:08Z INF Traefik version 3.3.4 built on 2025-02-25T10:11:00Z version=3.3.4
+2025-03-17T17:30:08Z INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2025-03-17T17:30:08Z INF Starting provider aggregator *aggregator.ProviderAggregator
+2025-03-17T17:30:08Z INF Starting provider *traefik.Provider
+2025-03-17T17:30:08Z INF Starting provider *docker.Provider
+2025-03-17T17:30:08Z INF Starting provider *acme.ChallengeTLSALPN
+2025-03-17T17:30:08Z INF Starting provider *acme.Provider
+2025-03-17T17:30:08Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-03-17T17:30:11Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-17T17:41:04Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-17T18:36:19Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-18T17:30:08Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-03-19T04:00:33Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-19T04:00:33Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-19T17:30:08Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-03-19T18:00:26Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-19T18:00:29Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-20T16:08:18Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-20T17:30:08Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-03-21T12:00:41Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-21T12:00:43Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-21T17:30:08Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-03-22T17:30:08Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-03-23T17:30:08Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-03-24T17:30:08Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-03-25T04:00:45Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-25T04:00:47Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-25T17:30:08Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-03-26T17:30:08Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-03-27T17:30:08Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-03-28T17:30:08Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-03-29T17:30:08Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-03-30T16:03:14Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-30T16:07:54Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-03-30T17:30:08Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-03-31T17:30:08Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-03-31T17:30:09Z WRN A new release of Traefik has been found: 3.3.5. Please consider updating.
+2025-03-31T20:00:29Z INF I have to go...
+2025-03-31T20:00:29Z INF Stopping server gracefully
+2025-03-31T20:00:29Z ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-03-31T20:00:29Z ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=web
+2025-03-31T20:00:29Z ERR error="close tcp [::]:80: use of closed network connection" entryPointName=web
+2025-03-31T20:00:29Z ERR error="accept tcp [::]:8100: use of closed network connection" entryPointName=kproxy
+2025-03-31T20:00:29Z ERR error="close tcp [::]:8100: use of closed network connection" entryPointName=kproxy
+2025-03-31T20:00:29Z ERR error="accept tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-03-31T20:00:29Z ERR error="close tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-03-31T20:00:30Z ERR error="close tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-03-31T20:00:30Z INF Server stopped
+2025-03-31T20:00:30Z INF Shutting down
+2025-03-31T20:00:33Z INF Traefik version 3.3.5 built on 2025-03-31T08:45:59Z version=3.3.5
+2025-03-31T20:00:33Z INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2025-03-31T20:00:33Z INF Starting provider aggregator *aggregator.ProviderAggregator
+2025-03-31T20:00:33Z INF Starting provider *traefik.Provider
+2025-03-31T20:00:33Z INF Starting provider *docker.Provider
+2025-03-31T20:00:33Z INF Starting provider *acme.ChallengeTLSALPN
+2025-03-31T20:00:33Z INF Starting provider *acme.Provider
+2025-03-31T20:00:33Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-03-31T20:00:35Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-01T20:00:33Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-04-02T20:00:33Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-04-03T20:00:33Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-04-04T20:00:33Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-04-05T20:00:33Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-04-06T20:00:33Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-04-07T20:00:33Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-04-08T10:49:11Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-08T20:00:33Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-04-09T20:00:33Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-04-10T20:00:33Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-04-11T15:02:34Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-11T15:13:12Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-11T20:00:33Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-04-12T02:03:23Z INF I have to go...
+2025-04-12T02:03:23Z INF Stopping server gracefully
+2025-04-12T02:03:23Z ERR error="accept tcp [::]:8100: use of closed network connection" entryPointName=kproxy
+2025-04-12T02:03:23Z ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=web
+2025-04-12T02:03:23Z ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-04-12T02:03:23Z ERR error="accept tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-04-12T02:03:23Z ERR error="close tcp [::]:80: use of closed network connection" entryPointName=web
+2025-04-12T02:03:23Z ERR error="close tcp [::]:8100: use of closed network connection" entryPointName=kproxy
+2025-04-12T02:03:23Z ERR error="close tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-04-12T02:03:23Z ERR error="close tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-04-12T02:03:23Z INF Server stopped
+2025-04-12T02:03:23Z INF Shutting down
+2025-04-12T02:03:59Z INF Traefik version 3.3.5 built on 2025-03-31T08:45:59Z version=3.3.5
+2025-04-12T02:03:59Z INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2025-04-12T02:03:59Z INF Starting provider aggregator *aggregator.ProviderAggregator
+2025-04-12T02:03:59Z INF Starting provider *traefik.Provider
+2025-04-12T02:03:59Z INF Starting provider *docker.Provider
+2025-04-12T02:03:59Z INF Starting provider *acme.Provider
+2025-04-12T02:03:59Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-04-12T02:03:59Z INF Starting provider *acme.ChallengeTLSALPN
+2025-04-12T02:04:02Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-12T02:04:30Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-12T20:02:16Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-12T20:02:18Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-13T02:03:59Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-04-14T02:03:59Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-04-14T12:01:54Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-14T12:01:56Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-15T02:02:04Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-15T02:02:05Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-15T02:03:59Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-04-15T15:10:04Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-16T02:03:59Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-04-16T12:08:59Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-17T02:03:59Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-04-18T02:03:59Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-04-18T16:01:51Z INF I have to go...
+2025-04-18T16:01:51Z INF Stopping server gracefully
+2025-04-18T16:01:51Z ERR error="accept tcp [::]:8100: use of closed network connection" entryPointName=kproxy
+2025-04-18T16:01:51Z ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=web
+2025-04-18T16:01:51Z ERR error="close tcp [::]:8100: use of closed network connection" entryPointName=kproxy
+2025-04-18T16:01:51Z ERR error="close tcp [::]:80: use of closed network connection" entryPointName=web
+2025-04-18T16:01:51Z ERR error="accept tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-04-18T16:01:51Z ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-04-18T16:01:51Z ERR error="close tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-04-18T16:01:51Z ERR error="close tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-04-18T16:01:51Z INF Server stopped
+2025-04-18T16:01:51Z INF Shutting down
+2025-04-18T16:01:54Z INF Traefik version 3.3.6 built on 2025-04-18T09:18:46Z version=3.3.6
+2025-04-18T16:01:54Z INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2025-04-18T16:01:54Z INF Starting provider aggregator *aggregator.ProviderAggregator
+2025-04-18T16:01:54Z INF Starting provider *acme.ChallengeTLSALPN
+2025-04-18T16:01:54Z INF Starting provider *docker.Provider
+2025-04-18T16:01:54Z INF Starting provider *traefik.Provider
+2025-04-18T16:01:54Z INF Starting provider *acme.Provider
+2025-04-18T16:01:54Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-04-18T16:01:55Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-19T16:01:54Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-04-20T16:01:54Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-04-20T16:37:17Z INF I have to go...
+2025-04-20T16:37:17Z INF Stopping server gracefully
+2025-04-20T16:37:17Z ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-04-20T16:37:17Z ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=web
+2025-04-20T16:37:17Z ERR Error while starting server error="accept tcp [::]:443: use of closed network connection" entryPointName=websecure
+2025-04-20T16:37:17Z ERR error="accept tcp [::]:8100: use of closed network connection" entryPointName=kproxy
+2025-04-20T16:37:17Z ERR Error while starting server error="accept tcp [::]:80: use of closed network connection" entryPointName=web
+2025-04-20T16:37:17Z ERR error="accept tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-04-20T16:37:17Z ERR error="close tcp [::]:8100: use of closed network connection" entryPointName=kproxy
+2025-04-20T16:37:17Z ERR error="close tcp [::]:8090: use of closed network connection" entryPointName=mapi
+2025-04-20T16:37:17Z INF Server stopped
+2025-04-20T16:37:17Z INF Shutting down
+2025-04-20T16:40:59Z INF Traefik version 3.3.6 built on 2025-04-18T09:18:46Z version=3.3.6
+2025-04-20T16:40:59Z INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2025-04-20T16:40:59Z INF Starting provider aggregator *aggregator.ProviderAggregator
+2025-04-20T16:40:59Z INF Starting provider *docker.Provider
+2025-04-20T16:40:59Z INF Starting provider *traefik.Provider
+2025-04-20T16:40:59Z INF Starting provider *acme.Provider
+2025-04-20T16:40:59Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-04-20T16:40:59Z INF Starting provider *acme.ChallengeTLSALPN
+2025-04-20T16:41:01Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-20T16:41:09Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-20T16:41:25Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-20T16:41:37Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-20T16:44:52Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-20T16:45:24Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-20T16:45:34Z ERR error="service \"kproxy\" error: unable to find the IP address for the container \"/omni\": the server is ignored" container=omni-docker-4fcbb7f617c70de069d6e629b481e3da1026a06a4609fe606253bac1421a2e0d providerName=docker
+2025-04-20T16:45:37Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-20T16:45:38Z ERR error="service \"kproxy\" error: unable to find the IP address for the container \"/omni\": the server is ignored" container=omni-docker-4fcbb7f617c70de069d6e629b481e3da1026a06a4609fe606253bac1421a2e0d providerName=docker
+2025-04-20T16:45:43Z ERR error="service \"omni\" error: unable to find the IP address for the container \"/omni\": the server is ignored" container=omni-docker-4fcbb7f617c70de069d6e629b481e3da1026a06a4609fe606253bac1421a2e0d providerName=docker
+2025-04-20T16:45:43Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-20T16:45:47Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-20T16:45:48Z ERR error="service \"kproxy\" error: unable to find the IP address for the container \"/omni\": the server is ignored" container=omni-docker-4fcbb7f617c70de069d6e629b481e3da1026a06a4609fe606253bac1421a2e0d providerName=docker
+2025-04-20T16:45:53Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-20T16:45:55Z ERR error="service \"omni\" error: unable to find the IP address for the container \"/omni\": the server is ignored" container=omni-docker-4fcbb7f617c70de069d6e629b481e3da1026a06a4609fe606253bac1421a2e0d providerName=docker
+2025-04-20T16:46:02Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-20T16:46:05Z ERR error="service \"omni\" error: unable to find the IP address for the container \"/omni\": the server is ignored" container=omni-docker-4fcbb7f617c70de069d6e629b481e3da1026a06a4609fe606253bac1421a2e0d providerName=docker
+2025-04-20T16:46:19Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-20T16:46:22Z ERR error="service \"kproxy\" error: unable to find the IP address for the container \"/omni\": the server is ignored" container=omni-docker-4fcbb7f617c70de069d6e629b481e3da1026a06a4609fe606253bac1421a2e0d providerName=docker
+2025-04-20T16:46:49Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-20T16:46:51Z ERR error="service \"kproxy\" error: unable to find the IP address for the container \"/omni\": the server is ignored" container=omni-docker-4fcbb7f617c70de069d6e629b481e3da1026a06a4609fe606253bac1421a2e0d providerName=docker
+2025-04-20T16:47:44Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-20T16:47:46Z ERR error="service \"kproxy\" error: unable to find the IP address for the container \"/omni\": the server is ignored" container=omni-docker-4fcbb7f617c70de069d6e629b481e3da1026a06a4609fe606253bac1421a2e0d providerName=docker
+2025-04-20T16:48:48Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-20T16:48:50Z ERR error="service \"kproxy\" error: unable to find the IP address for the container \"/omni\": the server is ignored" container=omni-docker-4fcbb7f617c70de069d6e629b481e3da1026a06a4609fe606253bac1421a2e0d providerName=docker
+2025-04-20T16:49:50Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-20T16:49:53Z ERR error="service \"omni\" error: unable to find the IP address for the container \"/omni\": the server is ignored" container=omni-docker-4fcbb7f617c70de069d6e629b481e3da1026a06a4609fe606253bac1421a2e0d providerName=docker
+2025-04-20T16:50:54Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-20T16:50:57Z ERR error="service \"mapi\" error: unable to find the IP address for the container \"/omni\": the server is ignored" container=omni-docker-4fcbb7f617c70de069d6e629b481e3da1026a06a4609fe606253bac1421a2e0d providerName=docker
+2025-04-20T16:51:58Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-20T16:52:01Z ERR error="service \"omni\" error: unable to find the IP address for the container \"/omni\": the server is ignored" container=omni-docker-4fcbb7f617c70de069d6e629b481e3da1026a06a4609fe606253bac1421a2e0d providerName=docker
+2025-04-20T16:53:02Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-20T16:53:04Z ERR error="service \"kproxy\" error: unable to find the IP address for the container \"/omni\": the server is ignored" container=omni-docker-4fcbb7f617c70de069d6e629b481e3da1026a06a4609fe606253bac1421a2e0d providerName=docker
+2025-04-20T16:54:05Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-20T16:54:08Z ERR error="service \"kproxy\" error: unable to find the IP address for the container \"/omni\": the server is ignored" container=omni-docker-4fcbb7f617c70de069d6e629b481e3da1026a06a4609fe606253bac1421a2e0d providerName=docker
+2025-04-20T16:55:09Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-20T16:55:12Z ERR error="service \"mapi\" error: unable to find the IP address for the container \"/omni\": the server is ignored" container=omni-docker-4fcbb7f617c70de069d6e629b481e3da1026a06a4609fe606253bac1421a2e0d providerName=docker
+2025-04-20T16:55:26Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-20T17:02:59Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
