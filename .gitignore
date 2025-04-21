@@ -6,6 +6,7 @@ netbootxyz/config/logs/
 omni/etcd/
 omni/logs
 omni/snapshot.db
+omni/omni.asc
 omni/secondary-storage/
 traefik/logs/
 ucdialplans/
