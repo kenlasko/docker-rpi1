@@ -4,6 +4,7 @@ certs/
 netbootxyz/assets/
 netbootxyz/config/logs/
 omni/etcd/
+omni/logs
 omni/snapshot.db
 omni/secondary-storage/
 traefik/logs/
