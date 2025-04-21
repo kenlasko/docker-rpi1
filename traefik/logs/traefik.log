@@ -577,3 +577,18 @@ More details on: https://doc.traefik.io/traefik/contributing/data-collection/
 2025-04-20T16:55:12Z ERR error="service \"mapi\" error: unable to find the IP address for the container \"/omni\": the server is ignored" container=omni-docker-4fcbb7f617c70de069d6e629b481e3da1026a06a4609fe606253bac1421a2e0d providerName=docker
 2025-04-20T16:55:26Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
 2025-04-20T17:02:59Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-21T16:40:59Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-04-21T22:40:26Z INF Traefik version 3.3.6 built on 2025-04-18T09:18:46Z version=3.3.6
+2025-04-21T22:40:26Z INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2025-04-21T22:40:26Z INF Starting provider aggregator *aggregator.ProviderAggregator
+2025-04-21T22:40:26Z INF Starting provider *traefik.Provider
+2025-04-21T22:40:26Z INF Starting provider *docker.Provider
+2025-04-21T22:40:26Z INF Starting provider *acme.ChallengeTLSALPN
+2025-04-21T22:40:26Z INF Starting provider *acme.Provider
+2025-04-21T22:40:26Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letsencrypt.acme
+2025-04-21T22:40:29Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
+2025-04-21T22:40:55Z WRN No domain found in rule HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`), the TLS options applied for this router will depend on the SNI of each request entryPointName=websecure routerName=omni@docker
