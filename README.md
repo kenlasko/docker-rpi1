@@ -6,7 +6,26 @@ This is the repo for my "main" Raspberry Pi. It hosts several services such as:
 
 # Prerequisites
 - Docker
-- SOPS and age
+- SOPS and age (for secrets management)
+
+# Docker Secrets
+I want to ensure that all secrets are properly encrypted at rest so that I can store the repo on Github. This is accomplished via a few scripts:
+- [load-sops-secrets.yaml](load-sops-secrets.yaml)
+- [create-sops-secret-builder.sh](create-sops-secret-builder.sh)
+
+Secrets are encrypted via SOPS/age into [secrets.yaml](secrets.yaml)
+
+[load-sops-secrets.yaml](load-sops-secrets.yaml) will parse [secrets.yaml](secrets.yaml) and will create files at the specified location or individual secrets under `/run/secrets`. An example `secrets.yaml` is below:
+```
+STANDALONE_SECRET: mysecretvalue
+/docker/.env: |
+  SECRET1: mysecretvalue1
+  SECRET2: mysecretvalue2
+```
+`STANDALONE_SECRET` will be placed in a file at `/run/secrets/STANDALONE_SECRET`
+`/docker/.env` will create a secret in a file located at `/docker/.env`
+
+[create-sops-secret-builder.sh](create-sops-secret-builder.sh) creates a series of `systemd` services that will watch for changes in `secrets.yaml` and will trigger the [load-sops-secrets.yaml](load-sops-secrets.yaml)
 
 # Installing and Configuring SOPS and age
 ## Installation
@@ -54,3 +73,4 @@ sops --config .sops.yaml config/secrets.yaml
 ```
 cat /docker/secrets.yaml
 ```
+6. Run [create-sops-secret-builder.sh](create-sops-secret-builder.sh) to create the `systemd` services that will watch for changes in [secrets.yaml](secrets.yaml).
