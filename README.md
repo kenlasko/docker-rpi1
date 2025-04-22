@@ -41,6 +41,9 @@ sudo mv sops-v3.10.2.linux.arm64 /usr/local/bin/sops
 
 # Make the binary executable
 sudo chmod +x /usr/local/bin/sops
+
+# Install yq (required for load-sops-secrets.yaml)
+sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_arm64 -O /usr/bin/yq &&   sudo chmod +x /usr/bin/yq
 ```
 ## Configure SOPS/age
 1. Generate age private key
