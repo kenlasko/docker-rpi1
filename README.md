@@ -10,12 +10,12 @@ This is the repo for my "main" Raspberry Pi. It hosts several services such as:
 
 # Docker Secrets
 I want to ensure that all secrets are properly encrypted at rest so that I can store the repo on Github. This is accomplished via a few scripts:
-- [load-sops-secrets.yaml](load-sops-secrets.yaml)
+- [load-sops-secrets.sh](load-sops-secrets.sh)
 - [create-sops-secret-builder.sh](create-sops-secret-builder.sh)
 
 Secrets are encrypted via SOPS/age into [secrets.yaml](secrets.yaml)
 
-[load-sops-secrets.yaml](load-sops-secrets.yaml) will parse [secrets.yaml](secrets.yaml) and will create files at the specified location or individual secrets under `/run/secrets`. An example `secrets.yaml` is below:
+[load-sops-secrets.sh](load-sops-secrets.sh) will parse [secrets.yaml](secrets.yaml) and will create files at the specified location or individual secrets under `/run/secrets`. An example `secrets.yaml` is below:
 ```
 STANDALONE_SECRET: mysecretvalue
 /docker/.env: |
@@ -25,7 +25,7 @@ STANDALONE_SECRET: mysecretvalue
 `STANDALONE_SECRET` will be placed in a file at `/run/secrets/STANDALONE_SECRET`
 `/docker/.env` will create a secret in a file located at `/docker/.env`
 
-[create-sops-secret-builder.sh](create-sops-secret-builder.sh) creates a series of `systemd` services that will watch for changes in `secrets.yaml` and will trigger the [load-sops-secrets.yaml](load-sops-secrets.yaml)
+[create-sops-secret-builder.sh](create-sops-secret-builder.sh) creates a series of `systemd` services that will watch for changes in `secrets.yaml` and will trigger the [load-sops-secrets.sh](load-sops-secrets.sh)
 
 # Installing and Configuring SOPS and age
 ## Installation
@@ -42,7 +42,7 @@ sudo mv sops-v3.10.2.linux.arm64 /usr/local/bin/sops
 # Make the binary executable
 sudo chmod +x /usr/local/bin/sops
 
-# Install yq (required for load-sops-secrets.yaml)
+# Install yq (required for load-sops-secrets.sh)
 sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_arm64 -O /usr/bin/yq &&   sudo chmod +x /usr/bin/yq
 ```
 ## Configure SOPS/age
