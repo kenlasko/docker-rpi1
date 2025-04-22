@@ -2,6 +2,8 @@
 adguard/
 certs/
 netbootxyz/
+!netbootxyz/config/
+!netbootxyz/config/menus/
 !netbootxyz/config/menus/local/
 !netbootxyz/config/menus/local/**
 netbootxyz/config/menus/local/omni.ipxe
