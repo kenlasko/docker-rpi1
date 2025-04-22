@@ -1,3 +1,8 @@
+# Any ${VARIABLE} in this file will be replaced with the value from the .env file that should be in the same directory as `docker-compose.yaml`
+# All variables are dynamically loaded into .env via SOPS/age encrypted secrets.yaml
+# To edit the secrets.yaml:
+# sops --config .sops.yaml secrets.yaml
+
 services:
   adguard:
     image: adguard/adguardhome:latest
