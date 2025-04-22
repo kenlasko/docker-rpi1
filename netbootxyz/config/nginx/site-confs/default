@@ -1,7 +1,0 @@
-server {
-	listen 8085;
-	location / {
-		root /assets;
-		autoindex on;
-	}
-}

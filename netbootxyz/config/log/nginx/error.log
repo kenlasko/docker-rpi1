@@ -1,2 +1,0 @@
-2025/01/18 02:09:59 [error] 20#20: *1 open() "/assets/favicon.ico" failed (2: No such file or directory), client: 192.168.1.2, server: , request: "GET /favicon.ico HTTP/1.1", host: "192.168.1.17:8085", referrer: "http://192.168.1.17:8085/"
-2025/01/18 02:49:46 [error] 21#21: *10 open() "/assets/favicon.ico" failed (2: No such file or directory), client: 192.168.1.2, server: , request: "GET /favicon.ico HTTP/1.1", host: "192.168.1.17:8085", referrer: "http://192.168.1.17:8085/"
