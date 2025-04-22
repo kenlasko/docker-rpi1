@@ -1,9 +1,7 @@
 .env
 adguard/
 certs/
-netbootxyz/assets/
-netbootxyz/config/logs/
-netbootxyz/config/menus/
+netbootxyz/
 !netbootxyz/config/menus/local/
 netbootxyz/config/menus/local/omni.ipxe
 omni/etcd/
