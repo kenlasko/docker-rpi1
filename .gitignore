@@ -1,6 +1,12 @@
 .env
 adguard
-netbootxyz
+netbootxyz/*
+!netbootxyz/config/
+netbootxyz/config/*
+!netbootxyz/config/menus/
+netbootxyz/config/menus/*
+!netbootxyz/config/menus/local/
+netbootxyz/config/menus/local/omni.ipxe
 omni
 traefik
 ucdialplans
