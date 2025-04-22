@@ -5,7 +5,7 @@ echo "[1/3] Creating sops-secrets.service..."
 
 cat <<EOF | sudo tee /etc/systemd/system/sops-secrets.service > /dev/null
 [Unit]
-Description=Load SOPS secrets into /run/secrets
+Description=Load SOPS secrets
 After=network.target
 
 [Service]

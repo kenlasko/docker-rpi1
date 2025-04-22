@@ -7,7 +7,7 @@ services:
     network_mode: host
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.adguard.rule=Host(`adguard-rpi1.ucdialplans.com`)"
+      - "traefik.http.routers.adguard.rule=Host(`adguard-rpi1.${DOMAIN}`)"
       - "traefik.http.routers.adguard.entrypoints=websecure"
       - "traefik.http.routers.adguard.tls=true"
       - "traefik.http.routers.adguard.tls.certresolver=letsencrypt"
@@ -26,14 +26,14 @@ services:
       - WEB_APP_PORT=3300
     volumes:
       - ./netbootxyz/config:/config
-      - ./netbootxyz/assets:/assets #optional
+      - ./netbootxyz/assets:/assets
     ports:
       - 3300:3300
       - 8085:8085
       - 69:69/udp
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.netbootxyz.rule=Host(`netbootxyz.ucdialplans.com`)"
+      - "traefik.http.routers.netbootxyz.rule=Host(`netbootxyz.${DOMAIN}`)"
       - "traefik.http.routers.netbootxyz.entrypoints=websecure"
       - "traefik.http.routers.netbootxyz.tls=true"
       - "traefik.http.routers.netbootxyz.tls.certresolver=letsencrypt"
@@ -60,22 +60,22 @@ services:
       - --bind-addr=0.0.0.0:4443
       - --machine-api-bind-addr=0.0.0.0:8090
       - --k8s-proxy-bind-addr=0.0.0.0:8100
-      - --advertised-api-url=https://omni.ucdialplans.com/
-      - --siderolink-api-advertised-url=https://omni.ucdialplans.com:8090/
-      - --siderolink-wireguard-advertised-addr=omni.ucdialplans.com:50180
-      - --advertised-kubernetes-proxy-url=https://omni.ucdialplans.com:8100/
+      - --advertised-api-url=https://omni.${DOMAIN}/
+      - --siderolink-api-advertised-url=https://omni.${DOMAIN}:8090/
+      - --siderolink-wireguard-advertised-addr=omni.${DOMAIN}:50180
+      - --advertised-kubernetes-proxy-url=https://omni.${DOMAIN}:8100/
       - --auth-auth0-enabled=true
-      - --auth-auth0-domain=ucdialplans.us.auth0.com
+      - --auth-auth0-domain=${AUTH0_DOMAIN}
       - --auth-auth0-client-id=${AUTH0_CLIENT_ID}
       - --workload-proxying-subdomain=omni
-      - --initial-users=ken.lasko@gmail.com
+      - --initial-users=${OMNI_INITIAL_USER}
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.omni.rule=HostRegexp(`omni.ucdialplans.com`) || HostRegexp(`.+.omni.ucdialplans.com`)"
-      - "traefik.http.routers.omni.tls.domains[0].main=ucdialplans.com"
-      - "traefik.http.routers.omni.tls.domains[0].main=*.ucdialplans.com"
-      - "traefik.http.routers.omni.tls.domains[1].main=omni.ucdialplans.com"
-      - "traefik.http.routers.omni.tls.domains[1].main=*.omni.ucdialplans.com"
+      - "traefik.http.routers.omni.rule=HostRegexp(`omni.${DOMAIN}`) || HostRegexp(`.+.omni.${DOMAIN}`)"
+      - "traefik.http.routers.omni.tls.domains[0].main=${DOMAIN}"
+      - "traefik.http.routers.omni.tls.domains[0].main=*.${DOMAIN}"
+      - "traefik.http.routers.omni.tls.domains[1].main=omni.${DOMAIN}"
+      - "traefik.http.routers.omni.tls.domains[1].main=*.omni.${DOMAIN}"
       - "traefik.http.routers.omni.entrypoints=websecure"
       - "traefik.http.routers.omni.tls=true"
       - "traefik.http.routers.omni.tls.certresolver=letsencrypt"
@@ -84,19 +84,19 @@ services:
       - "traefik.http.services.omni.loadbalancer.server.scheme=https"
       - "traefik.http.services.omni.loadbalancer.server.scheme=h2c"
       # Omni API routing rule for consolidated routing
-      - "traefik.http.routers.mapi.rule=Host(`omni.ucdialplans.com`) || Host(`192.168.1.17`)"
+      - "traefik.http.routers.mapi.rule=Host(`omni.${DOMAIN}`) || Host(`192.168.1.17`)"
       - "traefik.http.routers.mapi.entrypoints=mapi"
       - "traefik.http.routers.mapi.tls=true"
-      - "traefik.http.routers.mapi.tls.domains[0].main=omni.ucdialplans.com"
+      - "traefik.http.routers.mapi.tls.domains[0].main=omni.${DOMAIN}"
       - "traefik.http.routers.mapi.tls.certresolver=letsencrypt"
       - "traefik.http.routers.mapi.service=mapi"
       - "traefik.http.services.mapi.loadbalancer.server.port=8090"
       - "traefik.http.services.mapi.loadbalancer.server.scheme=h2c"  
       # Omni Kube routing rule for consolidated routing
-      - "traefik.http.routers.kproxy.rule=Host(`omni.ucdialplans.com`)"
+      - "traefik.http.routers.kproxy.rule=Host(`omni.${DOMAIN}`)"
       - "traefik.http.routers.kproxy.entrypoints=kproxy"
       - "traefik.http.routers.kproxy.tls=true"
-      - "traefik.http.routers.kproxy.tls.domains[0].main=omni.ucdialplans.com"
+      - "traefik.http.routers.kproxy.tls.domains[0].main=omni.${DOMAIN}"
       - "traefik.http.routers.kproxy.tls.certresolver=letsencrypt"
       - "traefik.http.routers.kproxy.service=kproxy"
       - "traefik.http.services.kproxy.loadbalancer.server.port=8100"
@@ -143,7 +143,7 @@ services:
       # Set up the TLS configuration for our websecure listener
       - --entrypoints.websecure.http.tls=true
       - --entrypoints.websecure.http.tls.certResolver=letsencrypt
-      - --entrypoints.websecure.http.tls.domains[0].main=*.ucdialplans.com
+      - --entrypoints.websecure.http.tls.domains[0].main=*.${DOMAIN}
       # Set up the Omni endpoints
       - --entryPoints.mapi.address=:8090
       - --entryPoints.kproxy.address=:8100
@@ -162,7 +162,7 @@ services:
     labels:
       # Dashboard
       - "traefik.enable=true"
-      - 'traefik.http.routers.traefik.rule=Host(`traefik-rpi1.ucdialplans.com`)'
+      - 'traefik.http.routers.traefik.rule=Host(`traefik-rpi1.${DOMAIN}`)'
       - "traefik.http.routers.traefik.entrypoints=websecure"
       - "traefik.http.routers.traefik.tls.certresolver=letsencrypt"
       - "traefik.http.routers.traefik.service=api@internal"
@@ -188,13 +188,13 @@ services:
     volumes:
       - ./ucdialplans/data/wwwroot/:/var/www/
     labels:
-      - "traefik.http.routers.ucdialplans.rule=Host(`www.ucdialplans.com`)"
+      - "traefik.http.routers.ucdialplans.rule=Host(`www.${DOMAIN}`)"
       - "traefik.http.routers.ucdialplans.middlewares=ucdialplans"
       - "traefik.http.routers.ucdialplans.entrypoints=websecure"
       - "traefik.http.routers.ucdialplans.tls=true"
       - "traefik.http.routers.ucdialplans.tls.certresolver=letsencrypt"
-      - "traefik.http.middlewares.ucdialplans.redirectregex.regex=^https?://((www.)?ucdialplans.com)"
-      - "traefik.http.middlewares.ucdialplans.redirectregex.replacement=https://www.ucdialplans.com"
+      - "traefik.http.middlewares.ucdialplans.redirectregex.regex=^https?://((www.)?${DOMAIN})"
+      - "traefik.http.middlewares.ucdialplans.redirectregex.replacement=https://www.${DOMAIN}"
       - "traefik.http.middlewares.ucdialplans.redirectregex.permanent=true"
       - "traefik.http.services.ucdialplans.loadbalancer.server.port=8080"
     networks:
