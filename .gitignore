@@ -1,27 +1,6 @@
 .env
-adguard/
-certs/
-netbootxyz/
-# --- EXCEPTIONS: Keep the specific 'local' menu folder ---
-# To keep a subdirectory, you must un-ignore it AND all its parent
-# directories that were caught by the initial ignore rule.
-# The '!' negates a previous ignore rule for the specified path.
-# Un-ignore the path down to the desired directory:
-!netbootxyz/config/
-!netbootxyz/config/menus/
-!netbootxyz/config/menus/local/
-# --- IMPORTANT: Prevent tracking other files/folders within the un-ignored parents ---
-# Since we un-ignored `config/` and `menus/` just to traverse them,
-# we now need to explicitly ignore their direct contents (*),
-# while still allowing traversal into the next required subdirectory.
-netbootxyz/config/*
-!netbootxyz/config/menus/
-netbootxyz/config/menus/*
-!netbootxyz/config/menus/local/
-# --- FURTHER EXCLUSION: Ignore a specific file within the kept folder ---
-# Now that netbootxyz/config/menus/local/ and its contents are tracked (except as specified above),
-# specifically ignore the omni.ipxe file inside it.
-netbootxyz/config/menus/local/omni.ipxe
+adguard
+netbootxyz
 omni
 traefik
 ucdialplans

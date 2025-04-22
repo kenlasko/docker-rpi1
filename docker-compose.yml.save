@@ -22,8 +22,8 @@ services:
     container_name: netbootxyz
     restart: unless-stopped
     environment:
-      - NGINX_PORT=8085
-      - WEB_APP_PORT=3300
+      - NGINX_PORT=8085 #optional
+      - WEB_APP_PORT=3300 #optional
     volumes:
       - ./netbootxyz/config:/config
       - ./netbootxyz/assets:/assets #optional
@@ -50,7 +50,7 @@ services:
       - NET_ADMIN
     devices:
       - /dev/net/tun
-    ports:
+    ports:          # disable for old method
       - 50180:50180/udp
     command:
       - --account-id=${OMNI_ACCOUNT_ID} 
@@ -157,7 +157,7 @@ services:
       - 8100:8100
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
-#      - "./certs:/letsencrypt"
+      - "./certs:/letsencrypt"
       - "./traefik/logs/traefik.log:/var/log/traefik.log"
     labels:
       # Dashboard
