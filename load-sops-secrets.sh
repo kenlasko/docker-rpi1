@@ -6,9 +6,11 @@ SECRETS_FILE="/docker/secrets.yaml"
 SECRETS_DIR="/run/secrets"
 
 # Get the git repo root directory
+# If the script returns an empty value for $REPO_ROOT, you may have to run:
+# sudo git config --system --add safe.directory <PathToFolder>
 REPO_ROOT=$(git -C "$(dirname "$SECRETS_FILE")" rev-parse --show-toplevel 2>/dev/null || echo "")
 if [[ -z "$REPO_ROOT" ]]; then
-  echo "❌ Not inside a Git repository. Cannot update .gitignore relative paths."
+  echo "❌ $REPO_ROOT is not a Git repository. Cannot update .gitignore relative paths."
   exit 1
 fi
 

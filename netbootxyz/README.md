@@ -1,0 +1,1 @@
+For Omni, the `omni.ipxe` file is populated via the SOPS [secrets.yaml](/secrets.yaml) file because the join token needs to be encrypted in the repository. The unencrypted file is .gitignored.
