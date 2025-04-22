@@ -46,8 +46,7 @@ sudo chmod +x /usr/local/bin/sops
 1. Generate age private key
 ```
 mkdir -p ~/.config/sops/age
-export NIX_CONFIG="experimental-features = nix-command flakes"
-nix shell nixpkgs#age -c age-keygen -o ~/.config/sops/age/keys.txt  # Generate private key
+age -c age-keygen -o ~/.config/sops/age/keys.txt  # Generate private key
 ```
 2. Open `.config/sops/age/keys.txt` and copy the public key value. Save `~/.config/sops/age/keys.txt` somewhere secure off the machine and NOT in the Git repo. If you lose this, you will not be able to decrypt files encrypted with SOPS.
 ```
@@ -67,7 +66,7 @@ creation_rules:
 ```
 4. Create a default `secrets.yaml` by running the below command. SOPS will create a default `secrets.yaml` with some sample content. Remove the sample content, add all desired secrets and save. SOPS will encrypt the contents automatically using the `keys.txt` created earlier.
 ```
-sops --config .sops.yaml config/secrets.yaml
+sops --config .sops.yaml secrets.yaml
 ```
 5. Verify that `secrets.yaml` is encrypted by running the below command:
 ```
