@@ -3,6 +3,8 @@ adguard/
 certs/
 netbootxyz/assets/
 netbootxyz/config/logs/
+netbootxyz/config/menus/local/omni.ipxe
+netbootxyz/config/menus/omni.ipxe
 omni/etcd/
 omni/logs
 omni/snapshot.db
