@@ -4,7 +4,8 @@ This is the repo for my "main" Raspberry Pi. It hosts several services such as:
 - [NetbootXYZ](netbootxyz)
 - [AdGuard Home](adguard)
 
-## Related Repositories:
+## Related Repositories
+Links to my other repositories mentioned or used in this repo:
 - [K8s Bootstrap](https://github.com/kenlasko/k8s-bootstrap): Bootstraps Kubernetes clusters with essential apps using Terraform/OpenTofu
 - [K8s Cluster Configuration](https://github.com/kenlasko/k8s): Manages Kubernetes cluster manifests and workloads.
 - [NixOS](https://github.com/kenlasko/nixos-wsl): A declarative OS modified to support my Kubernetes cluster
