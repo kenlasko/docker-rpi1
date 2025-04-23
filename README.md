@@ -1,8 +1,8 @@
 # Introduction
 This is the repo for my "main" Raspberry Pi. It hosts several services such as:
-- Omni
-- NetbootXYZ
-- AdGuard
+- [Omni](https://github.com/kenlasko/omni)
+- [NetbootXYZ](netbootxyz)
+- [AdGuard Home](adguard)
 
 # Prerequisites
 - Docker

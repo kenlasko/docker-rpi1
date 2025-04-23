@@ -1,0 +1,9 @@
+#!ipxe
+
+# This uses a local version of the Talos boot assets. Its a bit faster than downloading from the Internet, but it means I have to manage the boot files and keep them up-to-date.
+# Deprecated in favour of auto-downloading the latest version.
+set server_ip  192.168.1.17:8085
+imgfree
+kernel http://${server_ip}/VMLINUZ talos.platform=metal console=ttyS0 console=tty0 init_on_alloc=1 slab_nomerge pti=on consoleblank=0 nvme_core.io_timeout=4294967295 printk.devkmsg=on ima_template=ima-ng ima_appraise=fix ima_hash=sha512 siderolink.api=https://omni.ucdialplans.com:8090/?jointoken=<YOUR-OMNI-JOIN-TOKEN-HERE> talos.events.sink=[fdae:41e4:649b:9303::1]:8091 talos.logging.kernel=tcp://[fdae:41e4:649b:9303::1]:8092 panic=0
+initrd http://${server_ip}/INITRAMF.XZ
+boot
