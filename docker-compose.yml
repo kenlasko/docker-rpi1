@@ -24,7 +24,7 @@ services:
 
   netbootxyz:
     container_name: netbootxyz
-    image: ghcr.io/netbootxyz/netbootxyz:2.0.86
+    image: ghcr.io/netbootxyz/netbootxyz:0.7.5-nbxyz5
     restart: unless-stopped
     environment:
       - NGINX_PORT=8085
@@ -206,15 +206,15 @@ services:
       - ipv6
 
 
-  watchtower:
-    container_name: watchtower
-    image: containrrr/watchtower:1.7.1
-    restart: unless-stopped
-    volumes:
-    - /var/run/docker.sock:/var/run/docker.sock
-    command: --schedule "0 0 */2 * * *" --cleanup
-    networks:
-    - ipv6
+#  watchtower:
+#    container_name: watchtower
+#    image: containrrr/watchtower:1.7.1
+#    restart: unless-stopped
+#    volumes:
+#    - /var/run/docker.sock:/var/run/docker.sock
+#    command: --schedule "0 0 */2 * * *" --cleanup
+#    networks:
+#    - ipv6
 
 
 networks:
