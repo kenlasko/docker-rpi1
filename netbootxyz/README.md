@@ -26,4 +26,7 @@ While the base installation of NetBootXYZ can be used to install a wide variety 
     2. Scroll down to `DHCP Service Management` and click on `Show Options`
     3. Enable `Network Boot` and set the appropriate IP address and path
     4. Save!
+
+    ![Unifi DHCP Netboot Config](unifi-dhcp-netboot.png)
+
 7. Now boot up a node and set it to network boot. With any luck, it should boot right to Talos in maintenance mode ready to be joined to an Omni-managed cluster!
