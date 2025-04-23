@@ -3,6 +3,7 @@ adguard
 certs
 netbootxyz/*
 !netbootxyz/README.md
+!netbootxyz/unifi-dhcp-netboot.png
 !netbootxyz/config/
 netbootxyz/config/*
 !netbootxyz/config/menus/
