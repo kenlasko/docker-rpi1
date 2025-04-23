@@ -4,6 +4,12 @@ This is the repo for my "main" Raspberry Pi. It hosts several services such as:
 - [NetbootXYZ](netbootxyz)
 - [AdGuard Home](adguard)
 
+## Related Repositories:
+- [K8s Bootstrap](https://github.com/kenlasko/k8s-bootstrap): Bootstraps Kubernetes clusters with essential apps using Terraform/OpenTofu
+- [K8s Cluster Configuration](https://github.com/kenlasko/k8s): Manages Kubernetes cluster manifests and workloads.
+- [NixOS](https://github.com/kenlasko/nixos-wsl): A declarative OS modified to support my Kubernetes cluster
+- [Omni](https://github.com/kenlasko/omni): Creates and manages the Kubernetes clusters.
+
 # Prerequisites
 - Docker
 - SOPS and age (for secrets management)
