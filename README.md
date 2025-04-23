@@ -47,7 +47,7 @@ sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_arm6
 ```
 ## Configure SOPS/age
 1. Generate age private key
-```
+```bash
 mkdir -p ~/.config/sops/age
 age -c age-keygen -o ~/.config/sops/age/keys.txt  # Generate private key
 ```
@@ -76,3 +76,12 @@ sops --config .sops.yaml secrets.yaml
 cat /docker/secrets.yaml
 ```
 6. Run [create-sops-secret-builder.sh](create-sops-secret-builder.sh) to create the `systemd` services that will watch for changes in [secrets.yaml](secrets.yaml).
+
+
+# Troubleshooting
+## Secrets Not Loading
+- Ensure `secrets.yaml` is properly encrypted using SOPS.
+- Verify the `systemd` services are running:
+  ```bash
+  systemctl status sops-secret-builder
+  ```
