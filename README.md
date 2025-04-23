@@ -1,8 +1,8 @@
 # Introduction
 This is the repo for my "main" Raspberry Pi. It hosts several services such as:
-- [Omni](https://github.com/kenlasko/omni)
-- [NetbootXYZ](netbootxyz)
-- [AdGuard Home](adguard)
+- [Omni](https://github.com/kenlasko/omni): manages Talos-based Kubernetes clusters
+- [NetbootXYZ](netbootxyz): Simplified PXE boot setup for Omni-managed Talos nodes
+- [AdGuard Home](adguard): DNS ad-blocker. This is synced with my [primary Kubernetes-based instance](https://github.com/kenlasko/k8s/tree/main/manifests/apps/adguard)
 
 ## Related Repositories
 Links to my other repositories mentioned or used in this repo:
