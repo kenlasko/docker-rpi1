@@ -15,7 +15,7 @@ While the base installation of NetBootXYZ can be used to install a wide variety 
 - A network environment capable of advertising a network boot server. I use Unifi.
 
 # Installation
-1. Modify the `netbootxyz` section of the [docker-compose.yaml](/docker-compose.yaml) for your needs
+1. Modify the `netbootxyz` section of the [docker-compose.yaml](/docker-compose.yml) for your needs
 2. Run `docker compose up -d netbootxyz` to create the deployment
 3. Copy the contents of the [/netbootxyz/config/menus/local](https://github.com/kenlasko/docker-rpi1/tree/main/netbootxyz/config/menus/local) folder into the NetbootXYZ Docker folder. This creates a menu entry for the custom Talos/Omni install. 
 4. Modify the `set omni_params` line in [omni_SAMPLE.ipxe](https://github.com/kenlasko/docker-rpi1/blob/main/netbootxyz/config/menus/local/omni_SAMPLE.ipxe) to match those in your Omni environment. You can obtain the appropriate values for `siderolink.api`, `talos.events.sink` and `talos.logging.kernel` by clicking the `Copy Kernel Parameters` button from the Omni `Home` page.
