@@ -23,7 +23,7 @@ I want to ensure that all secrets are properly encrypted at rest so that I can s
 Secrets are encrypted via SOPS/age into [secrets.yaml](secrets.yaml)
 
 [load-sops-secrets.sh](load-sops-secrets.sh) will parse [secrets.yaml](secrets.yaml) and will create files at the specified location or individual secrets under `/run/secrets`. An example `secrets.yaml` is below:
-```
+```yaml
 STANDALONE_SECRET: mysecretvalue
 /docker/.env: |
   SECRET1: mysecretvalue1
@@ -36,7 +36,7 @@ STANDALONE_SECRET: mysecretvalue
 
 # Installing and Configuring SOPS and age
 ## Installation
-```
+```bash
 # Install age
 sudo apt install age
 
@@ -59,13 +59,13 @@ mkdir -p ~/.config/sops/age
 age -c age-keygen -o ~/.config/sops/age/keys.txt  # Generate private key
 ```
 2. Open `.config/sops/age/keys.txt` and copy the public key value. Save `~/.config/sops/age/keys.txt` somewhere secure off the machine and NOT in the Git repo. If you lose this, you will not be able to decrypt files encrypted with SOPS.
-```
+```yaml
 # created: 2025-03-28T12:57:52Z
 # public key: age1jmeardw5auuj5m6yll49cpxtvge8cklltk9tlmy24xdre3wal4dq5vek65    <--- Copy this (but without the `# public key:` part)
 AGE-SECRET-KEY-1QCX332PRGV7GA6R8MJZ7CDU7S9Y5G7J0FU8U0L9PL5DUV835R7YQC7DDU5
 ```
 3. Create a file called `/docker/.sops.yaml` using the template below, and paste the public key into it
-```
+```yaml
 keys:
   - &primary age1jmeardw5auuj5m6yll49cpxtvge8cklltk9tlmy24xdre3wal4dq5vek65
 creation_rules:
@@ -75,11 +75,11 @@ creation_rules:
       - *primary
 ```
 4. Create a default `secrets.yaml` by running the below command. SOPS will create a default `secrets.yaml` with some sample content. Remove the sample content, add all desired secrets and save. SOPS will encrypt the contents automatically using the `keys.txt` created earlier.
-```
+```bash
 sops --config .sops.yaml secrets.yaml
 ```
 5. Verify that `secrets.yaml` is encrypted by running the below command:
-```
+```bash
 cat /docker/secrets.yaml
 ```
 6. Run [create-sops-secret-builder.sh](create-sops-secret-builder.sh) to create the `systemd` services that will watch for changes in [secrets.yaml](secrets.yaml).
