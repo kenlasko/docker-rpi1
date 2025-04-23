@@ -5,8 +5,8 @@
 
 services:
   adguard:
-    image: adguard/adguardhome:latest
     container_name: adguard
+    image: adguard/adguardhome:v0.107.61
     hostname: rpi1
     restart: unless-stopped
     network_mode: host
@@ -23,8 +23,8 @@ services:
 
 
   netbootxyz:
-    image: ghcr.io/netbootxyz/netbootxyz:latest
     container_name: netbootxyz
+    image: ghcr.io/netbootxyz/netbootxyz:2.0.86
     restart: unless-stopped
     environment:
       - NGINX_PORT=8085
@@ -48,8 +48,8 @@ services:
   
 
   omni:
-    image: ghcr.io/siderolabs/omni:v0.48.3
     container_name: omni
+    image: ghcr.io/siderolabs/omni:v0.48.3
     restart: always
     cap_add:
       - NET_ADMIN
@@ -115,7 +115,7 @@ services:
 
   portainer-agent:
     container_name: portainer-agent
-    image: portainer/agent:latest
+    image: portainer/agent:2.29.1
     restart: always
     ports:
       - 9001:9001    
@@ -127,7 +127,7 @@ services:
 
   traefik:
     container_name: traefik
-    image: traefik:latest
+    image: traefik:v3.3.6
     restart: always
     command:
       - --providers.docker=true
@@ -183,7 +183,7 @@ services:
 
   ucdialplans:
     container_name: ucdialplans
-    image: docker.io/kenlasko/ucdialplans:latest
+    image: docker.io/kenlasko/ucdialplans:14.5.13
     restart: unless-stopped
     environment:
       - DB_SERVER=${UCDIALPLANS_DB_SERVER}
@@ -208,7 +208,7 @@ services:
 
   watchtower:
     container_name: watchtower
-    image: containrrr/watchtower:armhf-latest
+    image: containrrr/watchtower:1.7.1
     restart: unless-stopped
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock
