@@ -1,0 +1,14 @@
+#!ipxe
+
+set os Talos
+set os_arch amd64
+set talos_version latest
+set talos_mirror https://github.com/siderolabs/talos/releases
+set talos_platform metal
+set talos_base_url ${talos_mirror}/latest/download
+set boot_params printk.devkmsg=on slab_nomerge pti=on console=ttyS0 console=tty0 init_on_alloc=1 init_on_free=1 consoleblank=0 nvme_core.io_timeout=4294967295 ima_template=ima-ng ima_appraise=fix ima_hash=sha512 talos.platform=${talos_platform} ${talos_config} initrd=initrd.magic
+set omni_params siderolink.api=https://omni.ucdialplans.com:8090/?jointoken=<YOUR-OMNI-JOIN-TOKEN-HERE> talos.events.sink=[fdae:41e4:649b:9303::1]:8091 talos.logging.kernel=tcp://[fdae:41e4:649b:9303::1]:8092 panic=0
+imgfree
+kernel ${talos_base_url}/vmlinuz-${os_arch} ${boot_params} ${omni_params}
+initrd ${talos_base_url}/initramfs-${os_arch}.xz
+boot
