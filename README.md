@@ -83,5 +83,5 @@ cat /docker/secrets.yaml
 - Ensure `secrets.yaml` is properly encrypted using SOPS.
 - Verify the `systemd` services are running:
   ```bash
-  systemctl status sops-secret-builder
+  systemctl status sops-secrets.service
   ```
