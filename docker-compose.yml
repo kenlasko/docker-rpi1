@@ -6,7 +6,7 @@
 services:
   adguard:
     container_name: adguard
-    image: adguard/adguardhome:v0.107.61
+    image: adguard/adguardhome:v0.107.62
     hostname: rpi1
     restart: unless-stopped
     network_mode: host
