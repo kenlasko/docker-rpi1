@@ -183,7 +183,7 @@ services:
 
   ucdialplans:
     container_name: ucdialplans
-    image: docker.io/kenlasko/ucdialplans:14.5.13
+    image: docker.io/kenlasko/ucdialplans:14.5.14
     restart: unless-stopped
     environment:
       - DB_SERVER=${UCDIALPLANS_DB_SERVER}
