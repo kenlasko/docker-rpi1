@@ -20,7 +20,11 @@ I want to ensure that all secrets are properly encrypted at rest so that I can s
 - [load-sops-secrets.sh](load-sops-secrets.sh)
 - [create-sops-secret-builder.sh](create-sops-secret-builder.sh)
 
-Secrets are encrypted via SOPS/age into [secrets.yaml](secrets.yaml)
+Secrets are encrypted via SOPS/age into [secrets.yaml](secrets.yaml). Some secrets that are stored here include:
+* `OMNI_JOIN_TOKEN` - token used for joining new machines to Omni
+* `/docker/.env` - environment variables for `docker-compose`
+* `/docker/omni/omni.asc` - PGP key for authenticating Omni
+* `/docker/netbootxyz/config/menus/local/omni.ipxe` - Custom NetBootXYZ menu for Omni. Contains join token, so must be kept secret
 
 [load-sops-secrets.sh](load-sops-secrets.sh) will parse [secrets.yaml](secrets.yaml) and will create files at the specified location or individual secrets under `/run/secrets`. An example `secrets.yaml` is below:
 ```yaml
