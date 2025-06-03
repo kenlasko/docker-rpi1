@@ -1,4 +1,5 @@
 #!/bin/bash
+DOCKER_PATH="/docker"
 set -euo pipefail
 
 echo "[1/3] Creating sops-secrets.service..."
@@ -10,7 +11,7 @@ After=network.target
 
 [Service]
 Type=oneshot
-ExecStart=/docker/load-sops-secrets.sh
+ExecStart=$DOCKER_PATH/load-sops-secrets.sh
 Environment="SOPS_AGE_KEY_FILE=/home/ken/.config/sops/age/keys.txt"
 StandardOutput=journal
 StandardError=journal
@@ -23,7 +24,7 @@ cat <<EOF | sudo tee /etc/systemd/system/sops-secrets.path > /dev/null
 Description=Watch SOPS secrets.yaml for changes
 
 [Path]
-PathChanged=/docker/secrets.yaml
+PathChanged=$DOCKER_PATH/secrets.yaml
 
 [Install]
 WantedBy=multi-user.target
@@ -33,4 +34,4 @@ echo "[3/3] Enabling and starting watcher..."
 sudo systemctl daemon-reload
 sudo systemctl enable --now sops-secrets.path
 
-echo "✅ SOPS watcher installed and active. Try editing /docker/secrets.yaml to test it."
+echo "✅ SOPS watcher installed and active. Try editing $DOCKER_PATH/secrets.yaml by running sops --config .sops.yaml secrets.yaml to test it."

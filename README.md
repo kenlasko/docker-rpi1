@@ -55,12 +55,18 @@ sudo chmod +x /usr/local/bin/sops
 
 # Install yq (required for load-sops-secrets.sh)
 sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_arm64 -O /usr/bin/yq &&   sudo chmod +x /usr/bin/yq
+
+# Download the create-sops-secret-builder.sh and load-sops-secrets.sh scripts
+wget https://raw.githubusercontent.com/kenlasko/docker-rpi1/refs/heads/main/create-sops-secret-builder.sh
+wget https://raw.githubusercontent.com/kenlasko/docker-rpi1/refs/heads/main/load-sops-secrets.sh
+chmod u+x create-sops-secret-builder.sh load-sops-secrets.sh
+
 ```
 ## Configure SOPS/age
 1. Generate age private key
 ```bash
 mkdir -p ~/.config/sops/age
-age -c age-keygen -o ~/.config/sops/age/keys.txt  # Generate private key
+age-keygen -o ~/.config/sops/age/keys.txt  # Generate private key
 ```
 2. Open `.config/sops/age/keys.txt` and copy the public key value. Save `~/.config/sops/age/keys.txt` somewhere secure off the machine and NOT in the Git repo. If you lose this, you will not be able to decrypt files encrypted with SOPS.
 ```yaml
