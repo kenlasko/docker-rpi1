@@ -41,6 +41,8 @@ STANDALONE_SECRET: mysecretvalue
 # Updates
 Docker container updates are managed via [Renovate](https://github.com/renovatebot/renovate). When an update is found, Renovate updates the version number in `docker-compose.yml`. On the RPi, a custom service called `docker-auto-update` checks every 5 minutes to see if there are any repo updates. If so, it runs `git pull` and then `docker compose pull` and `docker compose up -d` to update the relevant containers.
 
+The service is created via [setup-docker-auto-update.sh](setup-docker-auto-update.sh), which creates the services and the [update-docker.sh](update-docker.sh) script.
+
 # Installing and Configuring SOPS and age
 ## Installation
 ```bash
@@ -111,7 +113,6 @@ cat /docker/secrets.yaml
 ```
 systemctl status docker-auto-update.service
 systemctl status docker-auto-update.timer
-
 ```
 - Check the logs 
 ```
