@@ -18,7 +18,7 @@ Links to my other repositories mentioned or used in this repo:
 # Docker Secrets
 I want to ensure that all secrets are properly encrypted at rest so that I can store the repo on Github. This is accomplished via a few scripts:
 - [load-sops-secrets.sh](load-sops-secrets.sh)
-- [create-sops-secret-builder.sh](create-sops-secret-builder.sh)
+- [setup-sops-secret-builder.sh](setup-sops-secret-builder.sh)
 
 Secrets are encrypted via SOPS/age into [secrets.yaml](secrets.yaml). Some secrets that are stored here include:
 * `OMNI_JOIN_TOKEN` - token used for joining new machines to Omni
