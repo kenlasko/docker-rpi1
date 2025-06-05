@@ -36,7 +36,10 @@ STANDALONE_SECRET: mysecretvalue
 `STANDALONE_SECRET` will be placed in a file at `/run/secrets/STANDALONE_SECRET`
 `/docker/.env` will create a secret in a file located at `/docker/.env`
 
-[create-sops-secret-builder.sh](create-sops-secret-builder.sh) creates a series of `systemd` services that will watch for changes in `secrets.yaml` and will trigger the [load-sops-secrets.sh](load-sops-secrets.sh)
+[setup-sops-secret-builder.sh](setup-sops-secret-builder.sh) creates a series of `systemd` services that will watch for changes in `secrets.yaml` and will trigger the [load-sops-secrets.sh](load-sops-secrets.sh)
+
+# Updates
+Docker container updates are managed via [Renovate](https://github.com/renovatebot/renovate). When an update is found, Renovate updates the version number in `docker-compose.yml`. On the RPi, a custom service called `docker-auto-update` checks every 5 minutes to see if there are any repo updates. If so, it runs `git pull` and then `docker compose pull` and `docker compose up -d` to update the relevant containers.
 
 # Installing and Configuring SOPS and age
 ## Installation
@@ -56,8 +59,8 @@ sudo chmod +x /usr/local/bin/sops
 # Install yq (required for load-sops-secrets.sh)
 sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_arm64 -O /usr/bin/yq &&   sudo chmod +x /usr/bin/yq
 
-# Download the create-sops-secret-builder.sh and load-sops-secrets.sh scripts
-wget https://raw.githubusercontent.com/kenlasko/docker-rpi1/refs/heads/main/create-sops-secret-builder.sh
+# Download the setup-sops-secret-builder.sh and load-sops-secrets.sh scripts
+wget https://raw.githubusercontent.com/kenlasko/docker-rpi1/refs/heads/main/setup-sops-secret-builder.sh
 wget https://raw.githubusercontent.com/kenlasko/docker-rpi1/refs/heads/main/load-sops-secrets.sh
 chmod u+x create-sops-secret-builder.sh load-sops-secrets.sh
 
@@ -102,3 +105,14 @@ cat /docker/secrets.yaml
   ```bash
   systemctl status sops-secrets.service
   ```
+
+## Docker containers not auto-updating
+- Check the status of the auto-update service
+```
+systemctl status docker-auto-update.service
+systemctl status docker-auto-update.timer
+
+```
+- Check the logs 
+```
+journalctl -u docker-auto-update.service -f
