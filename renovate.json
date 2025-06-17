@@ -2,14 +2,13 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended",
-    ":rebaseStalePrs"
+    ":rebaseStalePrs",
+    ":enablePreCommit"
   ],
   "enabledManagers": [
     "docker-compose"
   ],
-  "pre-commit": {
-    "enabled": true
-  },
+
   "hostRules": [
     {
       "hostType": "docker",
