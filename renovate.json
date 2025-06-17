@@ -7,6 +7,9 @@
   "enabledManagers": [
     "docker-compose"
   ],
+  "pre-commit": {
+    "enabled": true
+  },
   "hostRules": [
     {
       "hostType": "docker",
