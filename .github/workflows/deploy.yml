@@ -1,0 +1,33 @@
+name: Deploy Compose Stack
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docker-compose.yml'
+      - '**/*.env'
+      - '**/*.yaml'
+      - '**/*.yml'
+      - 'scripts/**'
+      - '**/*.sh'
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Pull latest repo changes
+        run: |
+          cd /docker
+          git fetch origin main
+          git reset --hard origin/main
+
+      - name: Pull updated images
+        run: |
+          cd /docker
+          docker-compose pull
+
+      - name: Restart stack
+        run: |
+          cd /docker
+          docker-compose up -d --remove-orphans
