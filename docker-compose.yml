@@ -126,7 +126,7 @@ services:
 
   portainer-agent:
     container_name: portainer-agent
-    image: portainer/agent:2.30.1
+    image: portainer/agent:2.31.0
     restart: always
     ports:
       - 9001:9001    
