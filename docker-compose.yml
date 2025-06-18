@@ -30,6 +30,7 @@ services:
       - RUNNER_TOKEN=${GITHUB_RUNNER_TOKEN}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - /docker:/docker
     restart: unless-stopped
 
 
