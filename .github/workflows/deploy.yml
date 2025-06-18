@@ -16,6 +16,8 @@ jobs:
   deploy:
     runs-on: self-hosted
     steps:
+      - name: Mark repo as safe
+        run: git config --global --add safe.directory /docker
       - name: Pull latest repo changes
         run: |
           cd /docker
