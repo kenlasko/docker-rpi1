@@ -28,6 +28,7 @@ services:
     environment:
       - REPO_URL=https://github.com/kenlasko/docker-rpi1
       - RUNNER_TOKEN=${GITHUB_RUNNER_TOKEN}
+      - RUNNER_WORKDIR=/tmp/runner/work
       - RUN_AS_ROOT=false
     user: "1001:1000"
     volumes:
