@@ -21,7 +21,7 @@ jobs:
       - name: Pull latest repo changes
         run: |
           cd /docker
-          git fetch origin main
+          git fetch origin
 
       - name: Pull updated images
         run: |
