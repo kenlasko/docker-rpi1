@@ -23,6 +23,7 @@ jobs:
           cd /docker
           git remote set-url origin https://github.com/kenlasko/docker-rpi1.git
           git pull origin
+          git remote set-url origin git@github.com:kenlasko/docker-rpi1.git
 
       - name: Restart stack
         run: |
