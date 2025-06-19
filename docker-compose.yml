@@ -29,6 +29,7 @@ services:
       - REPO_URL=https://github.com/kenlasko/docker-rpi1
       - RUNNER_TOKEN=${GITHUB_RUNNER_TOKEN}
       - CONFIGURED_ACTIONS_RUNNER_FILES_DIR=/runner/data
+      - DISABLE_AUTOMATIC_DEREGISTRATION=true
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /docker:/docker
