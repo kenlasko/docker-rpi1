@@ -23,11 +23,6 @@ jobs:
           cd /docker
           git remote set-url origin https://github.com/kenlasko/docker-rpi1.git
 
-      - name: Pull updated images
-        run: |
-          cd /docker
-          docker-compose pull
-
       - name: Restart stack
         run: |
           cd /docker
