@@ -39,9 +39,10 @@ STANDALONE_SECRET: mysecretvalue
 [setup-sops-secret-builder.sh](setup-sops-secret-builder.sh) creates a series of `systemd` services that will watch for changes in `secrets.yaml` and will trigger the [load-sops-secrets.sh](load-sops-secrets.sh)
 
 # Updates
-Docker container updates are managed via [Renovate](https://github.com/renovatebot/renovate). When an update is found, Renovate updates the version number in `docker-compose.yml`. On the RPi, a custom service called `docker-auto-update` checks every 5 minutes to see if there are any repo updates. If so, it runs `git pull` and then `docker compose pull` and `docker compose up -d` to update the relevant containers.
+Docker container updates are managed via [Renovate](https://github.com/renovatebot/renovate). When an update is found, Renovate updates the version number in `docker-compose.yml`.  A [Github Self-Hosted Action](https://github.com/kenlasko/docker-rpi1/actions/runners?tab=self-hosted) runs locally in a Docker container to pull the latest repo changes and restart the affected containers.
 
-The service is created via [setup-docker-auto-update.sh](setup-docker-auto-update.sh), which creates the services and the [update-docker.sh](update-docker.sh) script.
+This was previously done via a custom service called `docker-auto-update` that checked every 5 minutes to see if there were any repo updates. If so, it ran `git pull` and then `docker compose pull` and `docker compose up -d` to update the relevant containers. The service was created via [setup-docker-auto-update.sh](setup-docker-auto-update.sh), which created the services and the [update-docker.sh](update-docker.sh) script. Now that I am leveraging Github, this script is no longer necessary.
+
 
 # Installing and Configuring SOPS and age
 ## Installation
