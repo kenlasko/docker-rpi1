@@ -28,9 +28,11 @@ services:
     environment:
       - REPO_URL=https://github.com/kenlasko/docker-rpi1
       - RUNNER_TOKEN=${GITHUB_RUNNER_TOKEN}
+      - CONFIGURED_ACTIONS_RUNNER_FILES_DIR=/runner/data
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /docker:/docker
+      - ./github-runner/runner/data:/runner/data
     restart: unless-stopped
 
 
