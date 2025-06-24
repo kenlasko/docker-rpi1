@@ -23,7 +23,8 @@
   "packageRules": [
     {
       "matchManagers": [
-        "docker-compose"
+        "docker-compose",
+        "pre-commit"
       ],
       "matchUpdateTypes": [
         "minor", 
