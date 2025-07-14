@@ -39,7 +39,7 @@ services:
 
   netbootxyz:
     container_name: netbootxyz
-    image: ghcr.io/netbootxyz/netbootxyz:0.7.5-nbxyz5
+    image: ghcr.io/netbootxyz/netbootxyz:0.7.6-nbxyz5
     restart: unless-stopped
     environment:
       - NGINX_PORT=8085
