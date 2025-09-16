@@ -89,6 +89,7 @@ services:
       - --auth-auth0-client-id=${AUTH0_CLIENT_ID}
       - --workload-proxying-subdomain=omni
       - --initial-users=${OMNI_INITIAL_USER}
+      - --enable-break-glass-configs
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.omni.rule=HostRegexp(`omni.${DOMAIN}`) || HostRegexp(`.+.omni.${DOMAIN}`)"
