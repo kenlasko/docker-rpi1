@@ -37,8 +37,8 @@ Docker container updates are managed via [Renovate](https://github.com/renovateb
 This was previously done via a custom service called `docker-auto-update` that checked every 5 minutes to see if there were any repo updates. If so, it ran `git pull` and then `docker compose pull` and `docker compose up -d` to update the relevant containers. The service was created via [setup-docker-auto-update.sh](setup-docker-auto-update.sh), which created the services and the [update-docker.sh](update-docker.sh) script. Now that I am leveraging Github, this script is no longer necessary.
 
 # References
-[Installing/Configuring SOPS and age](https://github.com/kenlasko/docker-rpi1/blob/main/docs/SOPS-CONFIG.md)
-[Setting up a Github Self-Hosted Runner](https://github.com/kenlasko/docker-rpi1/blob/main/docs/GITHUB-RUNNER.md)
+- [Installing/Configuring SOPS and age](https://github.com/kenlasko/docker-rpi1/blob/main/docs/SOPS-CONFIG.md)
+- [Setting up a Github Self-Hosted Runner](https://github.com/kenlasko/docker-rpi1/blob/main/docs/GITHUB-RUNNER.md)
 
 # Related Repositories
 Links to my other repositories mentioned or used in this repo:
