@@ -127,8 +127,8 @@ services:
     volumes:
       - ./omni:/_out
       - ./omni/omni.asc:/omni.asc
-    networks:
-      - ipv6
+    # networks:
+    #   - ipv6
 
 
   portainer-agent:
