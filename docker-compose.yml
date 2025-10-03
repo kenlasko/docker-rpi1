@@ -66,6 +66,7 @@ services:
     container_name: omni
     image: ghcr.io/siderolabs/omni:v1.2.1
     restart: always
+    network_mode: host
     cap_add:
       - NET_ADMIN
     devices:
