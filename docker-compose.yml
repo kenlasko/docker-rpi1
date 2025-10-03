@@ -71,6 +71,7 @@ services:
     devices:
       - /dev/net/tun
     ports:
+      - 2379:2379
       - 50180:50180/udp
     command:
       - --account-id=${OMNI_ACCOUNT_ID} 
