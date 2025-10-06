@@ -200,15 +200,15 @@ services:
 
   ucdialplans:
     container_name: ucdialplans
-    image: docker.io/kenlasko/ucdialplans:14.6.6
+    image: docker.io/kenlasko/ucdialplans:14.6.4
     restart: unless-stopped
     environment:
       - DB_SERVER=${UCDIALPLANS_DB_SERVER}
       - DB_DATABASE=${UCDIALPLANS_DB_DATABASE}
       - DB_USERNAME=${UCDIALPLANS_DB_USERNAME}
       - DB_PASSWORD=${UCDIALPLANS_DB_PASSWORD}
-    volumes:
-      - ./ucdialplans/data/wwwroot/:/var/www/
+#    volumes:
+#      - ./ucdialplans/data/wwwroot/:/var/www/
     labels:
       - "traefik.http.routers.ucdialplans.rule=Host(`www.${DOMAIN}`)"
       - "traefik.http.routers.ucdialplans.middlewares=ucdialplans"
