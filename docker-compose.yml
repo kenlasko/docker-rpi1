@@ -24,7 +24,7 @@ services:
 
   github-runner:
     container_name: github-runner
-    image: myoung34/github-runner:2.328.0
+    image: myoung34/github-runner:2.329.0
     environment:
       - REPO_URL=https://github.com/kenlasko/docker-rpi1
       - RUNNER_TOKEN=${GITHUB_RUNNER_TOKEN}
