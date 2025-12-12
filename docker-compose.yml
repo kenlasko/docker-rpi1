@@ -199,41 +199,29 @@ services:
       - ipv6
 
 
-  ucdialplans:
-    container_name: ucdialplans
-    image: docker.io/kenlasko/ucdialplans:14.6.7
-    restart: unless-stopped
-    environment:
-      - DB_SERVER=${UCDIALPLANS_DB_SERVER}
-      - DB_DATABASE=${UCDIALPLANS_DB_DATABASE}
-      - DB_USERNAME=${UCDIALPLANS_DB_USERNAME}
-      - DB_PASSWORD=${UCDIALPLANS_DB_PASSWORD}
-#    volumes:
-#      - ./ucdialplans/data/wwwroot/:/var/www/
-    labels:
-      - "traefik.http.routers.ucdialplans.rule=Host(`www.${DOMAIN}`)"
-      - "traefik.http.routers.ucdialplans.middlewares=ucdialplans"
-      - "traefik.http.routers.ucdialplans.entrypoints=websecure"
-      - "traefik.http.routers.ucdialplans.tls=true"
-      - "traefik.http.routers.ucdialplans.tls.certresolver=letsencrypt"
-      - "traefik.http.middlewares.ucdialplans.redirectregex.regex=^https?://((www.)?${DOMAIN})"
-      - "traefik.http.middlewares.ucdialplans.redirectregex.replacement=https://www.${DOMAIN}"
-      - "traefik.http.middlewares.ucdialplans.redirectregex.permanent=true"
-      - "traefik.http.services.ucdialplans.loadbalancer.server.port=8080"
-    networks:
-      - ipv6
-
-
-#  watchtower:
-#    container_name: watchtower
-#    image: containrrr/watchtower:1.7.1
-#    restart: unless-stopped
-#    volumes:
-#    - /var/run/docker.sock:/var/run/docker.sock
-#    command: --schedule "0 0 */2 * * *" --cleanup
-#    networks:
-#    - ipv6
-
+#   ucdialplans:
+#     container_name: ucdialplans
+#     image: docker.io/kenlasko/ucdialplans:14.6.7
+#     restart: unless-stopped
+#     environment:
+#       - DB_SERVER=${UCDIALPLANS_DB_SERVER}
+#       - DB_DATABASE=${UCDIALPLANS_DB_DATABASE}
+#       - DB_USERNAME=${UCDIALPLANS_DB_USERNAME}
+#       - DB_PASSWORD=${UCDIALPLANS_DB_PASSWORD}
+# #    volumes:
+# #      - ./ucdialplans/data/wwwroot/:/var/www/
+#     labels:
+#       - "traefik.http.routers.ucdialplans.rule=Host(`www.${DOMAIN}`)"
+#       - "traefik.http.routers.ucdialplans.middlewares=ucdialplans"
+#       - "traefik.http.routers.ucdialplans.entrypoints=websecure"
+#       - "traefik.http.routers.ucdialplans.tls=true"
+#       - "traefik.http.routers.ucdialplans.tls.certresolver=letsencrypt"
+#       - "traefik.http.middlewares.ucdialplans.redirectregex.regex=^https?://((www.)?${DOMAIN})"
+#       - "traefik.http.middlewares.ucdialplans.redirectregex.replacement=https://www.${DOMAIN}"
+#       - "traefik.http.middlewares.ucdialplans.redirectregex.permanent=true"
+#       - "traefik.http.services.ucdialplans.loadbalancer.server.port=8080"
+#     networks:
+#       - ipv6
 
 networks:
   ipv6:
