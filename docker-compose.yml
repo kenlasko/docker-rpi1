@@ -64,7 +64,7 @@ services:
 
   omni:
     container_name: omni
-    image: ghcr.io/siderolabs/omni:v1.3.4
+    image: ghcr.io/siderolabs/omni:v1.4.0
     restart: always
     cap_add:
       - NET_ADMIN
@@ -77,7 +77,7 @@ services:
       - --account-id=${OMNI_ACCOUNT_ID} 
       - --name=onprem-omni
       - --private-key-source=file:///omni.asc
-      # - --sqlite-storage-path=/_out/omni.db
+      - --sqlite-storage-path=/_out/omni.db
       - --event-sink-port=8091
       - --bind-addr=0.0.0.0:4443
       - --machine-api-bind-addr=0.0.0.0:8090
