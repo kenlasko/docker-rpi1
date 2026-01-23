@@ -37,6 +37,17 @@ services:
     restart: unless-stopped
 
 
+  hawser-agent:
+    container_name: hawser-agent
+    image: ghcr.io/finsys/hawser:v0.2.25
+    restart: always
+    ports:
+      - 2376:2376    
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/lib/docker/volumes:/var/lib/docker/volumes
+
+
   netbootxyz:
     container_name: netbootxyz
     image: ghcr.io/netbootxyz/netbootxyz:0.7.6-nbxyz5
