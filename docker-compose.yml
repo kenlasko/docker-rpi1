@@ -142,18 +142,6 @@ services:
       - ipv6
 
 
-  # portainer-agent:
-  #   container_name: portainer-agent
-  #   image: portainer/agent:2.37.0
-  #   restart: always
-  #   ports:
-  #     - 9001:9001    
-  #   volumes:
-  #     - /var/run/docker.sock:/var/run/docker.sock
-  #     - /var/lib/docker/volumes:/var/lib/docker/volumes
-
-
-
   traefik:
     container_name: traefik
     image: traefik:v3.6.8
