@@ -29,11 +29,11 @@ jobs:
       - name: Pull images
         run: |
           cd /docker
-          docker compose pull --ignore-buildable
+          services=$(docker compose config --services | grep -v github-runner | tr '\n' ' ')
+          docker compose pull --ignore-buildable $services
 
       - name: Deploy stack
         run: |
           cd /docker
           services=$(docker compose config --services | grep -v github-runner | tr '\n' ' ')
-          docker compose pull --ignore-buildable $services
           docker compose up -d --remove-orphans $services
