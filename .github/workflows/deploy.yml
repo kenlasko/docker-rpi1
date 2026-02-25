@@ -28,4 +28,5 @@ jobs:
       - name: Restart stack
         run: |
           cd /docker
+          docker compose pull
           docker compose up -d --remove-orphans
