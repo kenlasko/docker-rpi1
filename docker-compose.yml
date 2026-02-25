@@ -75,7 +75,7 @@ services:
 
   omni:
     container_name: omni
-    image: ghcr.io/siderolabs/omni:v1.5.6
+    image: ghcr.io/siderolabs/omni:v1.5.7
     restart: always
     cap_add:
       - NET_ADMIN
