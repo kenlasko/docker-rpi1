@@ -18,15 +18,35 @@ jobs:
     steps:
       - name: Mark repo as safe
         run: git config --global --add safe.directory /docker
+
       - name: Pull latest repo changes
         run: |
           cd /docker
           git remote set-url origin https://github.com/kenlasko/docker-rpi1.git
-          git pull origin
+          git pull origin main
           git remote set-url origin git@github.com:kenlasko/docker-rpi1.git
 
-      - name: Restart stack
+      - name: Pull images
         run: |
           cd /docker
-          docker compose pull
+          docker compose pull --ignore-buildable
+
+      - name: Deploy stack
+        run: |
+          cd /docker
           docker compose up -d --remove-orphans
+
+      - name: Verify containers are healthy
+        if: always()
+        run: |
+          cd /docker
+          sleep 10
+          failed=$(docker compose ps --status=exited --status=restarting -q)
+          if [ -n "$failed" ]; then
+            echo "::error::Unhealthy containers detected:"
+            docker compose ps
+            docker compose logs --tail=20 $failed
+            exit 1
+          fi
+          echo "All containers running:"
+          docker compose ps
