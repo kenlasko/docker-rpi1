@@ -41,6 +41,8 @@ services:
     container_name: hawser-agent
     image: ghcr.io/finsys/hawser:0.2.46
     restart: always
+    environment:
+      - TOKEN=${HAWSER_TOKEN}
     ports:
       - 2376:2376    
     volumes:
