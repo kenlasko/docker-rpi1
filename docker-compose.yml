@@ -39,7 +39,7 @@ services:
 
   hawser-agent:
     container_name: hawser-agent
-    image: ghcr.io/finsys/hawser:0.2.47
+    image: ghcr.io/finsys/hawser:0.2.48
     restart: always
     environment:
       - TOKEN=${HAWSER_TOKEN}
