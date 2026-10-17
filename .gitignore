@@ -16,3 +16,6 @@ ucdialplans
 omni/omni.asc
 github-runner/runner/data/_diag
 github-runner/runner/data/.*
+
+# graft's local graph cache — regenerable, not committed (run `graft build`).
+/graft/
