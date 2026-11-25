@@ -75,73 +75,73 @@ services:
       - ipv6
   
 
-  omni:
-    container_name: omni
-    image: ghcr.io/siderolabs/omni:v1.14.0
-    restart: always
-    cap_add:
-      - NET_ADMIN
-    devices:
-      - /dev/net/tun
-    ports:
-      - 2379:2379
-      - 50180:50180/udp
-    command:
-      - --account-id=${OMNI_ACCOUNT_ID} 
-      - --name=onprem-omni
-      - --private-key-source=file:///omni.asc
-      - --sqlite-storage-path=/_out/omni.db
-      - --event-sink-port=8091
-      - --bind-addr=0.0.0.0:4443
-      - --machine-api-bind-addr=0.0.0.0:8090
-      - --k8s-proxy-bind-addr=0.0.0.0:8100
-      - --advertised-api-url=https://omni.${DOMAIN}/
-      - --machine-api-advertised-url=https://omni.${DOMAIN}:8090/
-      - --siderolink-wireguard-advertised-addr=omni.${DOMAIN}:50180
-      - --advertised-kubernetes-proxy-url=https://omni.${DOMAIN}:8100/
-      - --auth-auth0-enabled=true
-      - --auth-auth0-domain=${AUTH0_DOMAIN}
-      - --auth-auth0-client-id=${AUTH0_CLIENT_ID}
-      - --workload-proxying-subdomain=omni
-      - --initial-users=${OMNI_INITIAL_USER}
-      - --enable-break-glass-configs
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.omni.rule=HostRegexp(`omni.${DOMAIN}`) || HostRegexp(`.+.omni.${DOMAIN}`)"
-      - "traefik.http.routers.omni.tls.domains[0].main=${DOMAIN}"
-      - "traefik.http.routers.omni.tls.domains[0].main=*.${DOMAIN}"
-      - "traefik.http.routers.omni.tls.domains[1].main=omni.${DOMAIN}"
-      - "traefik.http.routers.omni.tls.domains[1].main=*.omni.${DOMAIN}"
-      - "traefik.http.routers.omni.entrypoints=websecure"
-      - "traefik.http.routers.omni.tls=true"
-      - "traefik.http.routers.omni.tls.certresolver=letsencrypt"
-      - "traefik.http.routers.omni.service=omni"
-      - "traefik.http.services.omni.loadbalancer.server.port=4443"
-      - "traefik.http.services.omni.loadbalancer.server.scheme=https"
-      - "traefik.http.services.omni.loadbalancer.server.scheme=h2c"
-      # Omni API routing rule for consolidated routing
-      - "traefik.http.routers.mapi.rule=Host(`omni.${DOMAIN}`) || Host(`192.168.1.17`)"
-      - "traefik.http.routers.mapi.entrypoints=mapi"
-      - "traefik.http.routers.mapi.tls=true"
-      - "traefik.http.routers.mapi.tls.domains[0].main=omni.${DOMAIN}"
-      - "traefik.http.routers.mapi.tls.certresolver=letsencrypt"
-      - "traefik.http.routers.mapi.service=mapi"
-      - "traefik.http.services.mapi.loadbalancer.server.port=8090"
-      - "traefik.http.services.mapi.loadbalancer.server.scheme=h2c"  
-      # Omni Kube routing rule for consolidated routing
-      - "traefik.http.routers.kproxy.rule=Host(`omni.${DOMAIN}`)"
-      - "traefik.http.routers.kproxy.entrypoints=kproxy"
-      - "traefik.http.routers.kproxy.tls=true"
-      - "traefik.http.routers.kproxy.tls.domains[0].main=omni.${DOMAIN}"
-      - "traefik.http.routers.kproxy.tls.certresolver=letsencrypt"
-      - "traefik.http.routers.kproxy.service=kproxy"
-      - "traefik.http.services.kproxy.loadbalancer.server.port=8100"
-      - "traefik.http.services.kproxy.loadbalancer.server.scheme=http" 
-    volumes:
-      - ./omni:/_out
-      - ./omni/omni.asc:/omni.asc
-    networks:
-      - ipv6
+#  omni:
+#    container_name: omni
+#    image: ghcr.io/siderolabs/omni:v1.14.0
+#    restart: always
+#    cap_add:
+#      - NET_ADMIN
+#    devices:
+#      - /dev/net/tun
+#    ports:
+#      - 2379:2379
+#      - 50180:50180/udp
+#    command:
+#      - --account-id=${OMNI_ACCOUNT_ID} 
+#      - --name=onprem-omni
+#      - --private-key-source=file:///omni.asc
+#      - --sqlite-storage-path=/_out/omni.db
+#      - --event-sink-port=8091
+#      - --bind-addr=0.0.0.0:4443
+#      - --machine-api-bind-addr=0.0.0.0:8090
+#      - --k8s-proxy-bind-addr=0.0.0.0:8100
+#      - --advertised-api-url=https://omni.${DOMAIN}/
+#      - --machine-api-advertised-url=https://omni.${DOMAIN}:8090/
+#      - --siderolink-wireguard-advertised-addr=omni.${DOMAIN}:50180
+#      - --advertised-kubernetes-proxy-url=https://omni.${DOMAIN}:8100/
+#      - --auth-auth0-enabled=true
+#      - --auth-auth0-domain=${AUTH0_DOMAIN}
+#      - --auth-auth0-client-id=${AUTH0_CLIENT_ID}
+#      - --workload-proxying-subdomain=omni
+#      - --initial-users=${OMNI_INITIAL_USER}
+#      - --enable-break-glass-configs
+#    labels:
+#      - "traefik.enable=true"
+#      - "traefik.http.routers.omni.rule=HostRegexp(`omni.${DOMAIN}`) || HostRegexp(`.+.omni.${DOMAIN}`)"
+#      - "traefik.http.routers.omni.tls.domains[0].main=${DOMAIN}"
+#      - "traefik.http.routers.omni.tls.domains[0].main=*.${DOMAIN}"
+#      - "traefik.http.routers.omni.tls.domains[1].main=omni.${DOMAIN}"
+#      - "traefik.http.routers.omni.tls.domains[1].main=*.omni.${DOMAIN}"
+#      - "traefik.http.routers.omni.entrypoints=websecure"
+#      - "traefik.http.routers.omni.tls=true"
+#      - "traefik.http.routers.omni.tls.certresolver=letsencrypt"
+#      - "traefik.http.routers.omni.service=omni"
+#      - "traefik.http.services.omni.loadbalancer.server.port=4443"
+#      - "traefik.http.services.omni.loadbalancer.server.scheme=https"
+#      - "traefik.http.services.omni.loadbalancer.server.scheme=h2c"
+#      # Omni API routing rule for consolidated routing
+#      - "traefik.http.routers.mapi.rule=Host(`omni.${DOMAIN}`) || Host(`192.168.1.17`)"
+#      - "traefik.http.routers.mapi.entrypoints=mapi"
+#      - "traefik.http.routers.mapi.tls=true"
+#      - "traefik.http.routers.mapi.tls.domains[0].main=omni.${DOMAIN}"
+#      - "traefik.http.routers.mapi.tls.certresolver=letsencrypt"
+#      - "traefik.http.routers.mapi.service=mapi"
+#      - "traefik.http.services.mapi.loadbalancer.server.port=8090"
+#      - "traefik.http.services.mapi.loadbalancer.server.scheme=h2c"  
+#      # Omni Kube routing rule for consolidated routing
+#      - "traefik.http.routers.kproxy.rule=Host(`omni.${DOMAIN}`)"
+#      - "traefik.http.routers.kproxy.entrypoints=kproxy"
+#      - "traefik.http.routers.kproxy.tls=true"
+#      - "traefik.http.routers.kproxy.tls.domains[0].main=omni.${DOMAIN}"
+#      - "traefik.http.routers.kproxy.tls.certresolver=letsencrypt"
+#      - "traefik.http.routers.kproxy.service=kproxy"
+#      - "traefik.http.services.kproxy.loadbalancer.server.port=8100"
+#      - "traefik.http.services.kproxy.loadbalancer.server.scheme=http" 
+#    volumes:
+#      - ./omni:/_out
+#      - ./omni/omni.asc:/omni.asc
+#    networks:
+#      - ipv6
 
 
   traefik:
