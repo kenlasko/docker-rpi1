@@ -96,7 +96,7 @@ services:
       - --machine-api-bind-addr=0.0.0.0:8090
       - --k8s-proxy-bind-addr=0.0.0.0:8100
       - --advertised-api-url=https://omni.${DOMAIN}/
-      - --siderolink-api-advertised-url=https://omni.${DOMAIN}:8090/
+      - --machine-api-advertised-url=https://omni.${DOMAIN}:8090/
       - --siderolink-wireguard-advertised-addr=omni.${DOMAIN}:50180
       - --advertised-kubernetes-proxy-url=https://omni.${DOMAIN}:8100/
       - --auth-auth0-enabled=true
